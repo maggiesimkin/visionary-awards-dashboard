@@ -60,7 +60,9 @@
         .chart-card { background: #1a1a1a; padding: 24px; border-radius: 8px; border: 1px solid #2a2a2a; box-shadow: 0 2px 12px rgba(0,0,0,0.3); position: relative; }
         .chart-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 20px; color: #d4a437; }
         .chart-container { position: relative; height: 300px; width: 100%; }
+        .chart-container.bar-chart { height: auto; min-height: 0; }
         svg.chart-svg { width: 100%; height: 100%; }
+        .bar-chart svg { height: auto; }
         .table-section { background: #1a1a1a; border-radius: 8px; border: 1px solid #2a2a2a; box-shadow: 0 2px 12px rgba(0,0,0,0.3); padding: 24px; overflow-x: auto; }
         .table-controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px; }
         @media (max-width: 768px) { .table-controls { grid-template-columns: 1fr; } }
@@ -129,7 +131,7 @@
         <div class="header-top">
             <div>
                 <h1>Visionary Awards 2026 — Event Dashboard</h1>
-                <div class="header-subtitle">Sponsorship, Registration &amp; Revenue Tracking</div>
+                <div class="header-subtitle">Sponsorship, Registration &amp; Revenue Tracking &nbsp;·&nbsp; <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;text-decoration:none;font-size:11px;">↗ SF Dashboard</a></div>
             </div>
             <div class="data-sources">
                 <div class="source-item"><span class="status-dot salesforce"></span>Salesforce</div>
@@ -152,33 +154,33 @@
             <div class="kpi-row">
                 <div class="kpi-card">
                     <div class="kpi-label">Total Confirmed Revenue</div>
-                    <div class="kpi-value green">$615,934</div>
-                    <div class="kpi-sublabel">SF ($557,429) + Splash direct ($58,505)</div>
+                    <div class="kpi-value green"><a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:inherit;text-decoration:none;">$629,489</a></div>
+                    <div class="kpi-sublabel">SF ($567,429) + Splash direct ($62,060)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Sponsorship Won</div>
-                    <div class="kpi-value green">$245,109</div>
-                    <div class="kpi-sublabel">116.7% of $210,000 goal</div>
+                    <div class="kpi-value green"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:inherit;text-decoration:none;">$255,109</a></div>
+                    <div class="kpi-sublabel">121.5% of $210,000 goal</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Tables/Tickets Won</div>
-                    <div class="kpi-value orange">$370,825</div>
-                    <div class="kpi-sublabel">SF $312,320 + Splash direct $58,505</div>
+                    <div class="kpi-value orange"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$374,380</a></div>
+                    <div class="kpi-sublabel">SF $312,320 + Splash direct $62,060</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Splash Direct Revenue</div>
-                    <div class="kpi-value purple">$58,505</div>
-                    <div class="kpi-sublabel">6 VIP tables ($51,000) + 19 tickets ($7,505)</div>
+                    <div class="kpi-value purple">$62,060</div>
+                    <div class="kpi-sublabel">6 VIP tables ($51,000) + 28 tickets ($11,060)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Open Pipeline (SF)</div>
-                    <div class="kpi-value blue">$30,160</div>
-                    <div class="kpi-sublabel">5 opportunities</div>
+                    <div class="kpi-value blue"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$20,160</a></div>
+                    <div class="kpi-sublabel">4 opportunities</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Tables/Tickets Coverage</div>
-                    <div class="kpi-value orange">87.3%</div>
-                    <div class="kpi-sublabel">$370,825 of $425,000 goal — gap $54,175</div>
+                    <div class="kpi-value orange">88.1%</div>
+                    <div class="kpi-sublabel">$374,380 of $425,000 goal — gap $50,620</div>
                 </div>
             </div>
 
@@ -189,20 +191,20 @@
                         <div class="progress-bar green" style="width:100%;">116.7%</div>
                     </div>
                     <div class="progress-info">
-                        <span>$245,109 of $210,000 goal</span>
-                        <span style="color:#4ecb71;font-weight:600;">+$35,109 surplus</span>
+                        <span>$255,109 of $210,000 goal</span>
+                        <span style="color:#4ecb71;font-weight:600;">+$45,109 surplus</span>
                     </div>
                 </div>
                 <div class="progress-card">
                     <div class="progress-label">Tables/Tickets Revenue (SF + Splash Direct)</div>
                     <div class="stacked-bar">
                         <div class="stacked-segment green" style="flex:5783;">SF: $312,320</div>
-                        <div class="stacked-segment purple" style="flex:1085;">Splash: $58,505</div>
-                        <div class="stacked-segment orange" style="flex:559;">Pipeline: $30,160</div>
+                        <div class="stacked-segment purple" style="flex:1153;">Splash: $62,060</div>
+                        <div class="stacked-segment orange" style="flex:375;">Pipeline: $20,160</div>
                     </div>
                     <div class="progress-info">
-                        <span>$370,825 confirmed of $425,000 goal (87.3%)</span>
-                        <span style="color:#e74c3c;font-weight:600;">Gap to goal: $54,175</span>
+                        <span>$374,380 confirmed of $425,000 goal (88.1%)</span>
+                        <span style="color:#e74c3c;font-weight:600;">Gap to goal: $50,620</span>
                     </div>
                 </div>
             </div>
@@ -257,27 +259,27 @@
             <div class="kpi-row">
                 <div class="kpi-card">
                     <div class="kpi-label">Total Attending</div>
-                    <div class="kpi-value green">211</div>
+                    <div class="kpi-value green">246</div>
                     <div class="kpi-sublabel">Active registrations</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">VIP Reserved Table</div>
-                    <div class="kpi-value purple">57</div>
+                    <div class="kpi-value purple">58</div>
                     <div class="kpi-sublabel">Premium seating</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Invited Guests</div>
-                    <div class="kpi-value blue">99</div>
+                    <div class="kpi-value blue">111</div>
                     <div class="kpi-sublabel">Comp registrations</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Individual Tickets</div>
-                    <div class="kpi-value green">55</div>
-                    <div class="kpi-sublabel">Paid individual (incl. FINALISTVA26 comps)</div>
+                    <div class="kpi-value green">77</div>
+                    <div class="kpi-sublabel">Individual tickets</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Unique Emails</div>
-                    <div class="kpi-value blue">163</div>
+                    <div class="kpi-value blue">195</div>
                     <div class="kpi-sublabel">Distinct registrants</div>
                 </div>
                 <div class="kpi-card">
@@ -319,10 +321,12 @@
                     <div class="discount-card">
                         <h3>Code Breakdown</h3>
                         <table class="discount-table">
-                            <tr><td>No Code</td><td>124</td></tr>
-                            <tr><td>PARTNERVA26</td><td>54</td></tr>
+                            <tr><td>No Code</td><td>145</td></tr>
+                            <tr><td>PARTNERVA26</td><td>59</td></tr>
                             <tr><td>FINALISTVA26</td><td>24</td></tr>
+                            <tr><td>PASTHONOREE26</td><td>6</td></tr>
                             <tr><td>HONOREE26</td><td>4</td></tr>
+                            <tr><td>EICVA26</td><td>3</td></tr>
                             <tr><td>ANGIEVA26</td><td>1</td></tr>
                             <tr><td>CAROLYNVA26</td><td>1</td></tr>
                             <tr><td>DAVEVA26</td><td>1</td></tr>
@@ -363,11 +367,11 @@
             <div class="charts-row">
                 <div class="chart-card">
                     <h3>Top Companies Registered</h3>
-                    <div class="chart-container" id="topCompaniesChart"></div>
+                    <div class="chart-container bar-chart" id="topCompaniesChart"></div>
                 </div>
                 <div class="chart-card">
                     <h3>Top Guest-Of Organizations</h3>
-                    <div class="chart-container" id="guestOfChart"></div>
+                    <div class="chart-container bar-chart" id="guestOfChart"></div>
                 </div>
             </div>
 
@@ -387,8 +391,8 @@
                     <div class="kpi-card">
                         <div class="kpi-label">GDPR Agreement</div>
                         <div style="display:flex;gap:10px;margin-top:12px;">
-                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#4ecb71;">159</div><div style="font-size:11px;color:#666;">Agreed</div></div>
-                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#e74c3c;">3</div><div style="font-size:11px;color:#666;">Declined</div></div>
+                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#4ecb71;">192</div><div style="font-size:11px;color:#666;">Agreed</div></div>
+                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#e74c3c;">5</div><div style="font-size:11px;color:#666;">Declined</div></div>
                             <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#555;">49</div><div style="font-size:11px;color:#666;">No Response</div></div>
                         </div>
                     </div>
@@ -401,7 +405,7 @@
             </div>
 
             <div class="section">
-                <div class="section-title">All Registrations (211 Active)</div>
+                <div class="section-title">All Registrations (246 Active)</div>
                 <div class="table-section">
                     <div class="table-controls">
                         <input type="text" class="control-input" id="registrationSearchInput" placeholder="Search name or company...">
@@ -441,7 +445,7 @@
             <div class="kpi-row">
                 <div class="kpi-card">
                     <div class="kpi-label">Inconsistencies Found</div>
-                    <div class="kpi-value red">7</div>
+                    <div class="kpi-value red">5</div>
                     <div class="kpi-sublabel">Items with discrepancies</div>
                 </div>
                 <div class="kpi-card">
@@ -456,8 +460,8 @@
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">JoAnn Tracker Total</div>
-                    <div class="kpi-value gold">$344,000</div>
-                    <div class="kpi-sublabel">Tables goal revised: 50 × $8,500 = $425K</div>
+                    <div class="kpi-value gold">$369,500</div>
+                    <div class="kpi-sublabel">Tables goal: 50 × $8,500 = $425K</div>
                 </div>
             </div>
 
@@ -481,39 +485,36 @@
             </div>
 
             <div class="change-tracking-card">
-                <h3>Changes in Last 7 Days (Mar 9 — Mar 17, 2026)</h3>
+                <h3>Changes in Last 7 Days (Mar 17 — Mar 23, 2026)</h3>
                 <div class="change-item">
                     <div class="change-subtitle">New Salesforce Closes</div>
                     <div class="change-detail">
-                        <strong>Visit Cincy — Closed Won</strong> $8,500 (3/11/2026, moved from Proposal Development)<br>
-                        <strong>Destination DC — Closed Won</strong> $8,500 (3/12/2026, moved from Buying Decision)<br>
-                        <strong>Visit Seattle — Closed Won</strong> $1,185 (3/10/2026, moved from Buying Decision)<br>
-                        <strong>IMEX Group — Ticket Purchase</strong> $395 (3/10/2026, new)<br>
-                        <strong>Miles Partnership — New Pipeline</strong> $10,000 Proposal Development (new entry)<br>
-                        <strong>Note:</strong> Choose Chicago, Long Beach CVB, and LV Explore re-categorized from Sponsorship → Tables product line (no revenue change)
+                        <strong>Miles Partnership — Closed Won Sponsorship</strong> $10,000 (3/19/2026, Supplier of the Year — moved from pipeline)<br>
+                        <strong>No new table/ticket closes</strong> this week — Tables/Tix confirmed holds at $312,320<br>
+                        <strong>Pipeline:</strong> $30,160 → $20,160 (down 2 opps — Miles closed, NYC Tourism modified 3/19 now Buying Decision)
                     </div>
                 </div>
                 <div class="change-item">
-                    <div class="change-subtitle">New Splash Registrations (Mar 9 — Mar 17)</div>
+                    <div class="change-subtitle">New Splash Registrations (Mar 17 — Mar 23)</div>
                     <div class="change-detail">
-                        <strong>+54 new registrations</strong> (157 → 211 attending)<br>
-                        <strong>Mar 9–10:</strong> 14 new — Visionary honoree guests, Courtney Mesmer, Joanna Hurt, Nick Giannetti, Steven Paganelli, and others<br>
-                        <strong>Mar 11:</strong> 13 new — <strong>Katie Kirby (paid VIP table $8,500)</strong>, 4 HONOREE26 registrants (Sarah Michel, Michele Frania, David &amp; Terri Beckett), plus Finalist code registrants<br>
-                        <strong>Mar 12–13:</strong> 6 new — Alexandra Horton (paid $395), Marc Ghafoori (paid $395), <strong>Charles Starks (VIP table, CHARLESVA26)</strong>, Dina Starks<br>
-                        <strong>Mar 15–16:</strong> 11 new — <strong>3 paid VIP tables</strong> (Stephanie Murnan $8,500, Brandi Sally $8,500, + Katherine Weselak comp), Lindsay &amp; Julie Williams (FINALISTVA26), Trinh Le, Bahara Saleh, Maureen Nyamongo<br>
-                        <strong>Mar 17:</strong> 4 new — Amra Elmore, Odyssey Armitage, Sina Bünte (FINALISTVA26), Alan Patterson (paid $395)
+                        <strong>+35 new registrations</strong> (211 → 246 attending)<br>
+                        <strong>Mar 18–19:</strong> Ariadni Pereira (paid $395 / Olympian Meeting), Colleen Phalen (PARTNERVA26 / Miles Partnership), Claire Smith (Vancouver Convention Centre), John Loveless (GES), Joy Womack (AAMC), Krista LeZotte (ASHA), Diane Kovats (ISCB), Carol Wallace (paid $395 / San Diego Theatres)<br>
+                        <strong>Mar 20:</strong> 10 new — TMS team (Meredith Douglas, Dan Sherman, Danielle Foisy — all paid $395), Kireem Swinton (paid $395 / Visit Baltimore), Drew Squeglia (paid $395 / Hyatt Hotels), <strong>3 EICVA26 registrants</strong> (Annette Gregg/SITE, Natasha Richards/IMEX, Don Welsh/Destinations Intl), Shari Weinstein, Laurie Nelson-Choice (PARTNERVA26)<br>
+                        <strong>Mar 22:</strong> Mary Gallagher (Los Angeles Tourism)<br>
+                        <strong>New codes:</strong> PASTHONOREE26 (6 past honorees) and EICVA26 (3 industry leaders)
                     </div>
                 </div>
                 <div class="change-item">
-                    <div class="change-subtitle">Splash Revenue Jump</div>
+                    <div class="change-subtitle">Splash Revenue</div>
                     <div class="change-detail">
-                        Splash revenue up <strong>$27,870</strong> this week: $30,635 → $58,505. Now have <strong>6 paid VIP tables</strong> ($51,000) and <strong>19 paid individual tickets</strong> ($7,505). New code <strong>HONOREE26</strong> active (4 registrants). New named code CHARLESVA26 (1).
+                        Splash revenue: $58,505 → <strong>$62,060</strong> (+$3,555). VIP tables unchanged at 6 ($51,000). Individual ticket revenue up: $7,505 → <strong>$11,060</strong> (28 paid tickets, up from 19). Combined total revenue (SF + Splash): <strong>$629,489</strong>.
                     </div>
                 </div>
                 <div class="change-item">
-                    <div class="change-subtitle">Registration Milestone</div>
+                    <div class="change-subtitle">JoAnn Tracker Updates</div>
                     <div class="change-detail">
-                        Crossed <strong>200 registrations</strong> this week. Now at <strong>211</strong> with 51 days to go vs just 17 at this point in 2025. Company data now available from Splash — top attending orgs: Projection (25), Visit Cincy (19), Nashville CVC (6), Maritz (6), Visit Salt Lake (6), Caesars Entertainment (6).
+                        Tracker total up $344K → <strong>$369,500</strong>. New entries: <strong>Omni Hotels</strong> (Katie Kirby, Reg, $8,500), <strong>Javits Center #2</strong> (second table, $8,500), <strong>Visit Denver</strong> ($8,500, Stephanie Murnan). <strong>Hyatt Convention Alliance removed</strong> from tracker. NYC Tourism now shows 2 seat entries.
+                        <br>SF quick links: <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;">Dashboard</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:#d4a437;">Sponsorship</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:#d4a437;">Pipeline</a>
                     </div>
                 </div>
             </div>
@@ -534,20 +535,28 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Hyatt Convention Alliance</strong></td>
+                                <td><strong>Omni Hotels</strong></td>
                                 <td>$8,500</td>
                                 <td>—</td>
                                 <td>$8,500</td>
                                 <td><span class="flag-badge status">MISSING</span></td>
-                                <td>In JoAnn's tracker (JBR Highboy; contact: kate.nummikoski@hyatt.com). No SF record. Needs to be created.</td>
+                                <td>New in JoAnn's tracker this week (Katie Kirby, kkirby@omnihotels.com, Reg). No SF record. Needs to be created or confirmed as direct Splash purchase.</td>
                             </tr>
                             <tr>
-                                <td><strong>Houston First Corp</strong></td>
+                                <td><strong>Javits Center #2</strong></td>
                                 <td>$8,500</td>
-                                <td>$8,500 (pipeline)</td>
-                                <td>$0</td>
+                                <td>—</td>
+                                <td>$8,500</td>
                                 <td><span class="flag-badge status">MISSING</span></td>
-                                <td>JoAnn added this week. SF has Houston First at $8,500 Buying Decision — just needs JoAnn's tracker note updated.</td>
+                                <td>JoAnn has two Javits Center entries ($8,500 each). SF only has one. Second table may be a direct Splash purchase — confirm with Joyce Leveston.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visit Denver</strong></td>
+                                <td>$8,500</td>
+                                <td>—</td>
+                                <td>$8,500</td>
+                                <td><span class="flag-badge status">MISSING</span></td>
+                                <td>New in JoAnn's tracker this week (smurnan@visitdenver.com — Stephanie Murnan). No SF record yet. Create opportunity.</td>
                             </tr>
                             <tr>
                                 <td><strong>Experience Columbus</strong></td>
@@ -555,31 +564,15 @@
                                 <td>$1,580 (pipeline)</td>
                                 <td>-$6,920</td>
                                 <td><span class="flag-badge amount">AMOUNT</span></td>
-                                <td>SF amount changed from $8,500 → $1,580 (modified 3/11, Buying Decision). JoAnn still has $8,500. Verify — partial deal or data entry error?</td>
+                                <td>SF changed from $8,500 → $1,580 on 3/11 (Buying Decision). JoAnn still has $8,500. Three weeks unresolved — verify and correct SF.</td>
                             </tr>
                             <tr>
                                 <td><strong>NYC Tourism + Conventions</strong></td>
-                                <td>$8,500</td>
+                                <td>$8,500 × 2 entries</td>
                                 <td>$8,500 (pipeline)</td>
-                                <td>$0</td>
-                                <td><span class="flag-badge status">STATUS</span></td>
-                                <td>JoAnn: "conf ltr" (confirmation letter sent); SF still shows Proposal Development (modified 3/16). Move SF stage forward.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Visit California</strong></td>
-                                <td>$30,000</td>
-                                <td>$30,109</td>
-                                <td>-$109</td>
-                                <td><span class="flag-badge amount">AMOUNT</span></td>
-                                <td>JoAnn updated to $30,000 this week (was $25,000). SF closed at $30,109 — $109 rounding difference. Likely resolved.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Smart City Networks</strong></td>
-                                <td>—</td>
-                                <td>—</td>
-                                <td>$8,500</td>
-                                <td><span class="flag-badge status">MISSING</span></td>
-                                <td>Dennis O'Gara paid $8,500 VIP table via Splash (3/5). Not in JoAnn's tracker. No SF opportunity. New deal or walk-in?</td>
+                                <td>Structure</td>
+                                <td><span class="flag-badge structure">STRUCTURE</span></td>
+                                <td>JoAnn now has two NYC Tourism entries (Ben + Tara Singh, both Highboy). SF shows one $8,500 Buying Decision (modified 3/19). Confirm if two tables are expected.</td>
                             </tr>
                             <tr>
                                 <td><strong>New Orleans &amp; Company</strong></td>
@@ -613,13 +606,19 @@
                                 <td><strong>Visit Savannah</strong></td>
                                 <td>$395</td>
                                 <td>2026-03-09</td>
-                                <td>SF closed 3/9/2026 ✓. JoAnn added to tracker this week ✓. Resolved.</td>
+                                <td>SF closed 3/9/2026 ✓. In JoAnn's tracker ✓. Resolved.</td>
                             </tr>
                             <tr>
                                 <td><strong>IMEX Group</strong></td>
                                 <td>$395</td>
                                 <td>2026-03-10</td>
-                                <td>SF closed 3/10/2026 ✓. JoAnn added to tracker this week ✓. Resolved.</td>
+                                <td>SF closed 3/10/2026 ✓. In JoAnn's tracker ✓. Resolved.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Omni Hotels</strong> (Katie Kirby)</td>
+                                <td>$8,500</td>
+                                <td>2026-03-11</td>
+                                <td>Marked "Reg" in JoAnn's tracker — likely direct Splash purchase. No SF record. Confirm if expected to have SF opp.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -629,35 +628,39 @@
             <div class="recommendations-card">
                 <h3>Recommendations</h3>
                 <div class="recommendation-item">
-                    <strong>Create SF Record — Hyatt Convention Alliance ($8,500):</strong> JoAnn has a contact (kate.nummikoski@hyatt.com) and "JBR Highboy" note. Still no SF record after two weeks. Needs to be entered in SF.
+                    <strong>Create SF Records — Omni Hotels, Visit Denver:</strong> Both are new in JoAnn's tracker this week with contact emails. Neither has an SF opportunity. Omni Hotels: Katie Kirby (kkirby@omnihotels.com). Visit Denver: Stephanie Murnan (smurnan@visitdenver.com).
                 </div>
                 <div class="recommendation-item">
-                    <strong>Create SF Record — Smart City Networks ($8,500):</strong> Dennis O'Gara paid a VIP table via Splash on 3/5. Still not in SF or JoAnn's tracker after two weeks. Confirm whether this is a new deal or a walk-in and enter accordingly.
+                    <strong>Clarify Javits Center #2:</strong> JoAnn has two Javits entries at $8,500 each. SF has one. Confirm with Joyce Leveston if the second table was a direct purchase (no SF record needed) or a new deal to enter.
                 </div>
                 <div class="recommendation-item">
-                    <strong>Verify Experience Columbus Amount:</strong> JoAnn has $8,500 confirmed. SF changed to $1,580 on 3/11 (Buying Decision). This is a $6,920 discrepancy — likely a data entry error in SF. Confirm with JoAnn and update SF.
+                    <strong>Fix Experience Columbus in SF (3 weeks open):</strong> JoAnn has $8,500 confirmed. SF shows $1,580 Buying Decision since 3/11. Almost certainly a data entry error — please correct in SF.
                 </div>
                 <div class="recommendation-item">
-                    <strong>Update SF Stage — NYC Tourism:</strong> JoAnn shows "conf ltr" sent. SF still shows Proposal Development (modified 3/16). Move to Buying Decision in SF if the letter is confirmed.
+                    <strong>NYC Tourism — Confirm Two Tables:</strong> JoAnn now has two entries (Ben + Tara Singh). SF still shows one $8,500 opp at Buying Decision. If two tables are expected, a second SF opportunity should be created.
                 </div>
                 <div class="recommendation-item">
-                    <strong>Update JoAnn's Tracker — Houston First Corp:</strong> SF has Houston First at $8,500 Buying Decision but JoAnn added "Houston" without linking it to the SF opp. Confirm these are the same deal.
+                    <strong>SF Quick Links:</strong> <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;">VA Dashboard</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:#d4a437;">Sponsorship Confirmed</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix Confirmed</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWajMAG/view" target="_blank" style="color:#d4a437;">Sponsorship Pipeline</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix Pipeline</a>
                 </div>
                 <div class="recommendation-item">
-                    <strong>Clarify MGM Resorts &amp; IHG Double Entries:</strong> Both appear in JoAnn's tables section AND sponsorship section. Confirm if these are separate deals at each level or duplicate entries.
-                </div>
-                <div class="recommendation-item">
-                    <strong>Goal Update:</strong> JoAnn's tracker header now reads "50 Tables $425,000" (down from 60 tables/$510K). Tables/Tickets Coverage should be recalculated against the revised goal.
-                </div>
-                <div class="recommendation-item">
-                    <strong>Registration:</strong> 211 attending at 51 days out vs 17 at this point last year. Crossed 200 this week. Dietary non-response now 50 (down from 69) — good progress. RegTestComp26 still has 1 active registration to revoke.
+                    <strong>Registration:</strong> 246 attending at 45 days out vs 35 at this point last year. Individual ticket revenue up significantly ($7,505 → $11,060). New codes PASTHONOREE26 (6) and EICVA26 (3) confirm honoree and industry outreach is converting. Critical nut allergy (anaphylactic to walnuts) still on file. RegTestComp26 still has 1 active registration to revoke.
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <strong>Dashboard Last Updated:</strong> Mar 17, 2026 | Data sources: Salesforce (4 reports) + Splash direct purchases | Revenue = SF + Splash combined | Self-contained HTML
+        <strong>Dashboard Last Updated:</strong> Mar 23, 2026 | Data sources: Salesforce (4 reports) + Splash direct purchases | Revenue = SF + Splash combined | Self-contained HTML
+    </footer>
+
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <strong>Dashboard Last Updated:</strong> Mar 23, 2026 | Data sources: Salesforce (4 reports) + Splash direct purchases | Revenue = SF + Splash combined | Self-contained HTML
     </footer>
 
     <script>
@@ -666,6 +669,7 @@
             {name:"Hilton FYDec2025-26 Engage Partnership",amount:25000,close:"2/3/2026",type:"sponsorship",stage:"Closed Won"},
             {name:"Visit Austin FYOct-2025-26 Excel Partnership",amount:60000,close:"12/15/2025",type:"sponsorship",stage:"Closed Won"},
             {name:"Philadelphia CVB - FY July 2025-26 Engage Partnership",amount:20000,close:"9/3/2025",type:"sponsorship",stage:"Closed Won"},
+            {name:"Miles Partnership - 2026 Visionary Awards Sponsor",amount:10000,close:"3/19/2026",type:"sponsorship",stage:"Closed Won"},
             {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:10000,close:"10/29/2025",type:"sponsorship",stage:"Closed Won"},
             {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:15000,close:"10/29/2025",type:"sponsorship",stage:"Closed Won"},
             {name:"Las Vegas Convention and Visitors Authority - 2026 CEMA Visionary Awards",amount:20000,close:"2/4/2026",type:"sponsorship",stage:"Closed Won"},
@@ -677,8 +681,8 @@
         const tableOpportunities = [
             {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:2250,close:"10/29/2025",type:"table",stage:"Closed Won"},
             {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:8500,close:"10/29/2025",type:"table",stage:"Closed Won"},
-            {name:"Boston Convention Marketing Center &amp; Meet Boston - FYJuly2025-26 Experience Partnership",amount:1185,close:"9/5/2025",type:"table",stage:"Closed Won"},
-            {name:"Boston Convention Marketing Center &amp; Meet Boston - FYJuly2025-26 Experience Partnership",amount:8500,close:"9/5/2025",type:"table",stage:"Closed Won"},
+            {name:"Boston Convention Marketing Center & Meet Boston - FYJuly2025-26 Experience Partnership",amount:1185,close:"9/5/2025",type:"table",stage:"Closed Won"},
+            {name:"Boston Convention Marketing Center & Meet Boston - FYJuly2025-26 Experience Partnership",amount:8500,close:"9/5/2025",type:"table",stage:"Closed Won"},
             {name:"Caesars Entertainment FY2025/2026 Engage Partnership",amount:8500,close:"10/27/2025",type:"table",stage:"Closed Won"},
             {name:"Choose Chicago - 2026 ENGAGE Partner",amount:8500,close:"11/11/2025",type:"table",stage:"Closed Won"},
             {name:"Convene Sponsorship 2026",amount:5000,close:"12/22/2025",type:"table",stage:"Closed Won"},
@@ -689,7 +693,7 @@
             {name:"Explore Edmonton - 2026 Visionary Awards Sponsor",amount:8500,close:"2/23/2026",type:"table",stage:"Closed Won"},
             {name:"GES | onPeak 2026 Explore Sponsor",amount:8500,close:"11/21/2025",type:"table",stage:"Closed Won"},
             {name:"Greater Miami CVB 2025-2026 Experience Partnership",amount:8500,close:"10/3/2025",type:"table",stage:"Closed Won"},
-            {name:"IHG Hotels &amp; Resorts 2026 Engage Partnership",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
+            {name:"IHG Hotels & Resorts 2026 Engage Partnership",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
             {name:"IMEX Group - 2026 Visionary Awards Ticket Purchase",amount:395,close:"3/10/2026",type:"table",stage:"Closed Won"},
             {name:"Las Vegas Convention and Visitors Authority - 2025-2026 Explore Level",amount:8500,close:"10/23/2025",type:"table",stage:"Closed Won"},
             {name:"Long Beach CVB FY25-26 Explore Level",amount:8500,close:"10/23/2025",type:"table",stage:"Closed Won"},
@@ -698,7 +702,7 @@
             {name:"Meet Minneapolis - 2025-2026 EXPLORE",amount:8000,close:"10/29/2025",type:"table",stage:"Closed Won"},
             {name:"MGM Resorts International - 2025-2026 - Engage Partnership",amount:8500,close:"10/28/2025",type:"table",stage:"Closed Won"},
             {name:"Nashville CVC 2025-2026 EXPLORE",amount:8500,close:"9/17/2025",type:"table",stage:"Closed Won"},
-            {name:"New Orleans &amp; Company 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
+            {name:"New Orleans & Company 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
             {name:"New Orleans Ernest N. Morial Convention Center 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
             {name:"Ottawa Tourism 2026 Explore Marketing Agreement",amount:8500,close:"1/21/2026",type:"table",stage:"Closed Won"},
             {name:"Projection - 2026 Visionary Awards Table/Tickets",amount:8500,close:"3/3/2026",type:"table",stage:"Closed Won"},
@@ -723,10 +727,9 @@
         ];
 
         const pipelineOpportunities = [
-            {name:"Miles Partnership - 2026 Visionary Awards and Business Events Summit Prospect",amount:10000,close:"4/2/2026",type:"sponsorship",stage:"Proposal Development"},
             {name:"Oak View Group 2026 Engage Partnership",amount:1580,close:"3/6/2026",type:"table",stage:"Buying Decision"},
             {name:"Experience Columbus 2026 Engage Partnership",amount:1580,close:"3/13/2026",type:"table",stage:"Buying Decision"},
-            {name:"New York City Tourism + Conventions - 2026 Visionary Awards",amount:8500,close:"3/18/2026",type:"table",stage:"Proposal Development"},
+            {name:"New York City Tourism + Conventions - 2026 Visionary Awards",amount:8500,close:"3/18/2026",type:"table",stage:"Buying Decision"},
             {name:"Houston First Corporation - 2026 - Engage Partnership",amount:8500,close:"3/27/2026",type:"table",stage:"Buying Decision"}
         ];
 
@@ -1128,7 +1131,7 @@
                 l.setAttribute('x1',x1); l.setAttribute('y1',y1); l.setAttribute('x2',x2); l.setAttribute('y2',y2);
                 l.setAttribute('stroke','#555'); l.setAttribute('stroke-width','2'); svg.appendChild(l);
             });
-            const todayX = xScale(51);
+            const todayX = xScale(45);
             const todayLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             todayLine.setAttribute('x1', todayX); todayLine.setAttribute('x2', todayX); todayLine.setAttribute('y1', pad.top); todayLine.setAttribute('y2', pad.top + h);
             todayLine.setAttribute('stroke', '#e74c3c'); todayLine.setAttribute('stroke-width', '1'); todayLine.setAttribute('stroke-dasharray', '4,4'); svg.appendChild(todayLine);
@@ -1167,25 +1170,35 @@
             const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg.setAttribute('viewBox', '0 0 400 400'); svg.setAttribute('class', 'chart-svg');
             const cx = 200, cy = 200, r = 120, innerR = 70;
-            let angle = -90;
             const total = Object.values(data).reduce((a, b) => a + b, 0);
             const colorArray = colors || ['#d4a437', '#5dade2', '#4ecb71'];
-            let colorIndex = 0;
-            Object.entries(data).forEach(([label, value]) => {
-                const sliceAngle = (value / total) * 360;
-                const startAngle = angle * Math.PI / 180, endAngle = (angle + sliceAngle) * Math.PI / 180;
-                const x1 = cx + r * Math.cos(startAngle), y1 = cy + r * Math.sin(startAngle);
-                const x2 = cx + r * Math.cos(endAngle), y2 = cy + r * Math.sin(endAngle);
-                const x3 = cx + innerR * Math.cos(endAngle), y3 = cy + innerR * Math.sin(endAngle);
-                const x4 = cx + innerR * Math.cos(startAngle), y4 = cy + innerR * Math.sin(startAngle);
-                const largeArc = sliceAngle > 180 ? 1 : 0;
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.setAttribute('d', `M ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} L ${x3} ${y3} A ${innerR} ${innerR} 0 ${largeArc} 0 ${x4} ${y4} Z`);
-                path.setAttribute('fill', colorArray[colorIndex % colorArray.length]); path.setAttribute('opacity', '0.9'); svg.appendChild(path);
-                angle += sliceAngle; colorIndex++;
-            });
-            let legendY = 20; colorIndex = 0;
-            Object.entries(data).forEach(([label, value]) => {
+            const entries = Object.entries(data);
+            // Single-slice: draw full donut ring instead of arc path
+            if (entries.length === 1) {
+                const outerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                outerCircle.setAttribute('cx', cx); outerCircle.setAttribute('cy', cy); outerCircle.setAttribute('r', r);
+                outerCircle.setAttribute('fill', colorArray[0]); outerCircle.setAttribute('opacity', '0.9'); svg.appendChild(outerCircle);
+                const innerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                innerCircle.setAttribute('cx', cx); innerCircle.setAttribute('cy', cy); innerCircle.setAttribute('r', innerR);
+                innerCircle.setAttribute('fill', '#1a1a1a'); svg.appendChild(innerCircle);
+            } else {
+                let angle = -90;
+                entries.forEach(([label, value], colorIndex) => {
+                    const sliceAngle = (value / total) * 360;
+                    const startAngle = angle * Math.PI / 180, endAngle = (angle + sliceAngle) * Math.PI / 180;
+                    const x1 = cx + r * Math.cos(startAngle), y1 = cy + r * Math.sin(startAngle);
+                    const x2 = cx + r * Math.cos(endAngle), y2 = cy + r * Math.sin(endAngle);
+                    const x3 = cx + innerR * Math.cos(endAngle), y3 = cy + innerR * Math.sin(endAngle);
+                    const x4 = cx + innerR * Math.cos(startAngle), y4 = cy + innerR * Math.sin(startAngle);
+                    const largeArc = sliceAngle > 180 ? 1 : 0;
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', `M ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} L ${x3} ${y3} A ${innerR} ${innerR} 0 ${largeArc} 0 ${x4} ${y4} Z`);
+                    path.setAttribute('fill', colorArray[colorIndex % colorArray.length]); path.setAttribute('opacity', '0.9'); svg.appendChild(path);
+                    angle += sliceAngle;
+                });
+            }
+            let legendY = 20;
+            entries.forEach(([label, value], colorIndex) => {
                 const percent = ((value / total) * 100).toFixed(0);
                 const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
                 rect.setAttribute('x', '20'); rect.setAttribute('y', legendY); rect.setAttribute('width', '12'); rect.setAttribute('height', '12');
@@ -1193,36 +1206,50 @@
                 const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttribute('x', '40'); text.setAttribute('y', legendY + 10); text.setAttribute('font-size', '12'); text.setAttribute('fill', '#bbb');
                 text.textContent = `${label} (${percent}%)`; svg.appendChild(text);
-                legendY += 20; colorIndex++;
+                legendY += 20;
             });
             container.innerHTML = ''; container.appendChild(svg);
         }
 
         function createHorizontalBarChart(container, data, color = '#d4a437') {
-            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             const entries = Object.entries(data).sort((a, b) => b[1] - a[1]);
-            const totalHeight = 30 + entries.length * 45;
-            svg.setAttribute('viewBox', `0 0 800 ${totalHeight}`); svg.setAttribute('class', 'chart-svg');
-            const padding = 160, barHeight = 28, gap = 17;
+            const rowHeight = 44;
+            const padding = 190, barHeight = 28, gap = 16;
+            const svgWidth = 800;
+            const totalHeight = entries.length * rowHeight;
             const maxValue = Math.max(...Object.values(data));
-            let y = 15;
+            // Create scrollable wrapper
+            const wrapper = document.createElement('div');
+            wrapper.style.cssText = 'overflow-y: auto; max-height: 320px; padding-right: 4px;';
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', `0 0 ${svgWidth} ${totalHeight}`);
+            svg.setAttribute('width', '100%');
+            svg.setAttribute('height', totalHeight);
+            svg.style.cssText = `display: block;`;
+            let y = 8;
             entries.forEach(([label, value]) => {
-                const barWidth = (value / maxValue) * (800 - padding - 30);
+                const barWidth = (value / maxValue) * (svgWidth - padding - 40);
                 const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttribute('x', '10'); text.setAttribute('y', y + barHeight / 2 + 5);
-                text.setAttribute('font-size', '12'); text.setAttribute('fill', '#bbb'); text.setAttribute('text-anchor', 'start'); text.textContent = label; svg.appendChild(text);
+                text.setAttribute('font-size', '14'); text.setAttribute('fill', '#ccc');
+                text.setAttribute('text-anchor', 'start'); text.textContent = label; svg.appendChild(text);
                 const bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                bgRect.setAttribute('x', padding); bgRect.setAttribute('y', y); bgRect.setAttribute('width', 800 - padding - 20); bgRect.setAttribute('height', barHeight);
+                bgRect.setAttribute('x', padding); bgRect.setAttribute('y', y);
+                bgRect.setAttribute('width', svgWidth - padding - 20); bgRect.setAttribute('height', barHeight);
                 bgRect.setAttribute('fill', '#2a2a2a'); bgRect.setAttribute('rx', '4'); svg.appendChild(bgRect);
                 const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                rect.setAttribute('x', padding); rect.setAttribute('y', y); rect.setAttribute('width', barWidth); rect.setAttribute('height', barHeight);
+                rect.setAttribute('x', padding); rect.setAttribute('y', y);
+                rect.setAttribute('width', Math.max(barWidth, 4)); rect.setAttribute('height', barHeight);
                 rect.setAttribute('fill', color); rect.setAttribute('rx', '4'); svg.appendChild(rect);
                 const valText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                valText.setAttribute('x', padding + barWidth + 10); valText.setAttribute('y', y + barHeight / 2 + 5);
-                valText.setAttribute('font-size', '12'); valText.setAttribute('fill', '#d4a437'); valText.setAttribute('font-weight', 'bold'); valText.textContent = value; svg.appendChild(valText);
-                y += barHeight + gap;
+                valText.setAttribute('x', padding + Math.max(barWidth, 4) + 10);
+                valText.setAttribute('y', y + barHeight / 2 + 5);
+                valText.setAttribute('font-size', '14'); valText.setAttribute('fill', '#d4a437');
+                valText.setAttribute('font-weight', 'bold'); valText.textContent = value; svg.appendChild(valText);
+                y += rowHeight;
             });
-            container.innerHTML = ''; container.appendChild(svg);
+            wrapper.appendChild(svg);
+            container.innerHTML = ''; container.appendChild(wrapper);
         }
 
         function initRevenueCharts() {
@@ -1259,22 +1286,21 @@
             const pace2026 = [
                 {d:77,c:28},{d:76,c:48},{d:74,c:50},{d:73,c:66},{d:72,c:79},{d:71,c:88},
                 {d:70,c:98},{d:69,c:107},{d:66,c:120},{d:65,c:135},{d:64,c:146},{d:63,c:151},{d:62,c:156},{d:59,c:157},
-                {d:58,c:163},{d:57,c:168},{d:56,c:175},{d:55,c:183},{d:54,c:190},{d:53,c:196},{d:52,c:201},{d:51,c:211}
+                {d:58,c:163},{d:57,c:168},{d:56,c:175},{d:55,c:183},{d:54,c:190},{d:53,c:196},{d:52,c:201},{d:51,c:211},{d:50,c:218},{d:49,c:224},{d:48,c:229},{d:47,c:234},{d:46,c:240},{d:45,c:246}
             ];
             createYoYChart(document.getElementById('rsvpPaceChart'), pace2025, pace2026);
-            createDonutChart(document.getElementById('ticketTypeChart'), {'VIP Reserved Table':57,'Invited Guest':99,'Individual Ticket':55}, ['#d4a437','#5dade2','#4ecb71']);
+            createDonutChart(document.getElementById('ticketTypeChart'), {'VIP Reserved Table':58,'Invited Guest':111,'Individual Ticket':77}, ['#d4a437','#5dade2','#4ecb71']);
             createHorizontalBarChart(document.getElementById('topCompaniesChart'), {
-                'Projection':25,'Visit Cincy':19,'Nashville CVC':6,'Maritz':6,
-                'Visit Salt Lake':6,'Caesars Entertainment':6,'Atlanta CVB':5,'Velvet Chainsaw':5,
-                'New Orleans & Company':4,'Choose Chicago':4,'Visit Omaha':3,'Hilton Worldwide Sales':3,
-                'Louisville Tourism':3,'Georgia World Congress Ctr':3,'Music City Center':3,
-                'Business Events Montréal':3,'Visit Seattle':3
+                'Projection':25,'Edmonton':20,'Maritz':7,'Nashville CVC':6,
+                'Visit Salt Lake':6,'Velvet Chainsaw':6,'Caesars Entertainment':6,'Atlanta CVB':5,
+                'New Orleans & Company':4,'Choose Chicago':4,'Visit KC':3,'Visit Omaha':3,
+                'Olympian Meeting':3,'Hilton Worldwide Sales':3,'ConferenceDirect':3
             }, 'rgba(212,164,55,0.7)');
             createHorizontalBarChart(document.getElementById('guestOfChart'), {
-                'Atlanta':9,'Nashville CVC':9,'Hilton':6,'Caesars':6,
-                'Maritz':7,'Visit Omaha':5,'Visit Salt Lake':5,'Visit San Antonio':4,
-                'California':4,'Visit KC':3,'New Orleans & Co/ENMCC':3,
-                'Visit Oklahoma City':2,'Ottawa Tourism':2,'Visit Tampa Bay':2
+                'Nashville CVC':10,'Atlanta':9,'Maritz':7,'Caesars':6,
+                'Hilton':5,'Visit Omaha':5,'Visit Salt Lake':5,'California':5,
+                'Visit San Antonio':4,'Projection':4,'Visit KC':3,'New Orleans & Co/ENMCC':3,
+                'Hilton Worldwide Sales':3,'Kansas City':3,'Visit Oklahoma City':2
             }, 'rgba(93,173,226,0.6)');
         }
 
