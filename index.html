@@ -17,8 +17,6 @@
         .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
         .status-dot.salesforce { background-color: #009FDA; box-shadow: 0 0 8px rgba(0,159,218,0.5); }
         .status-dot.splash { background-color: #F25D7A; box-shadow: 0 0 8px rgba(242,93,122,0.5); }
-        .status-dot.sharepoint { background-color: #00A4A4; box-shadow: 0 0 6px rgba(0,164,164,0.3); opacity: 0.5; }
-        .status-dot.business-central { background-color: #8D7DE4; box-shadow: 0 0 6px rgba(141,125,228,0.3); opacity: 0.5; }
         .tabs { display: flex; gap: 0; margin-top: 16px; }
         .tab-btn { background: none; border: none; color: rgba(255,255,255,0.45); padding: 12px 24px; font-size: 13px; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.3s ease; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
         .tab-btn:hover { color: rgba(255,255,255,0.8); }
@@ -61,8 +59,8 @@
         .chart-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 20px; color: #d4a437; }
         .chart-container { position: relative; height: 300px; width: 100%; }
         .chart-container.bar-chart { height: auto; min-height: 0; }
-        svg.chart-svg { width: 100%; height: 100%; }
         .bar-chart svg { height: auto; }
+        svg.chart-svg { width: 100%; height: 100%; }
         .table-section { background: #1a1a1a; border-radius: 8px; border: 1px solid #2a2a2a; box-shadow: 0 2px 12px rgba(0,0,0,0.3); padding: 24px; overflow-x: auto; }
         .table-controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px; }
         @media (max-width: 768px) { .table-controls { grid-template-columns: 1fr; } }
@@ -103,6 +101,7 @@
         .flag-badge.amount { background-color: #f39c12; color: white; }
         .flag-badge.status { background-color: #e74c3c; color: white; }
         .flag-badge.structure { background-color: #3498db; color: white; }
+        .flag-badge.resolved { background-color: #27ae60; color: white; }
         .recommendations-card { background: #1a1a1a; border-radius: 8px; border: 1px solid #2a2a2a; box-shadow: 0 2px 12px rgba(0,0,0,0.3); padding: 24px; margin-top: 30px; }
         .recommendations-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 20px; color: #d4a437; }
         .recommendation-item { padding: 15px; margin-bottom: 12px; border-left: 4px solid #d4a437; background-color: rgba(212,164,55,0.06); border-radius: 4px; font-size: 13px; color: #bbb; }
@@ -131,13 +130,11 @@
         <div class="header-top">
             <div>
                 <h1>Visionary Awards 2026 — Event Dashboard</h1>
-                <div class="header-subtitle">Sponsorship, Registration &amp; Revenue Tracking &nbsp;·&nbsp; <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;text-decoration:none;font-size:11px;">↗ SF Dashboard</a></div>
+                <div class="header-subtitle">Sponsorship, Registration &amp; Revenue Tracking &nbsp;·&nbsp; <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;text-decoration:none;font-size:11px;">&#8599; SF Dashboard</a></div>
             </div>
             <div class="data-sources">
                 <div class="source-item"><span class="status-dot salesforce"></span>Salesforce</div>
                 <div class="source-item"><span class="status-dot splash"></span>Splash</div>
-                <div class="source-item"><span class="status-dot sharepoint"></span>SharePoint</div>
-                <div class="source-item"><span class="status-dot business-central"></span>Business Central</div>
             </div>
         </div>
         <div class="tabs">
@@ -148,39 +145,40 @@
     </header>
 
     <div class="container">
+
         <!-- TAB 1: REVENUE OVERVIEW -->
         <div id="revenue" class="tab-content active">
-            <span class="source-badge salesforce"><span class="source-dot"></span> Source: Salesforce</span>
+            <span class="source-badge salesforce"><span class="source-dot"></span> Source: Salesforce + Splash Direct</span>
             <div class="kpi-row">
                 <div class="kpi-card">
                     <div class="kpi-label">Total Confirmed Revenue</div>
-                    <div class="kpi-value green"><a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:inherit;text-decoration:none;">$629,489</a></div>
-                    <div class="kpi-sublabel">SF ($567,429) + Splash direct ($62,060)</div>
+                    <div class="kpi-value green"><a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:inherit;text-decoration:none;">$639,569</a></div>
+                    <div class="kpi-sublabel">SF ($575,534) + Splash direct ($64,035)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Sponsorship Won</div>
                     <div class="kpi-value green"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:inherit;text-decoration:none;">$255,109</a></div>
-                    <div class="kpi-sublabel">121.5% of $210,000 goal</div>
+                    <div class="kpi-sublabel">121.5% of $210,000 goal — unchanged</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Tables/Tickets Won</div>
-                    <div class="kpi-value orange"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$374,380</a></div>
-                    <div class="kpi-sublabel">SF $312,320 + Splash direct $62,060</div>
+                    <div class="kpi-value orange"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$384,460</a></div>
+                    <div class="kpi-sublabel">SF $320,425 + Splash direct $64,035</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Splash Direct Revenue</div>
-                    <div class="kpi-value purple">$62,060</div>
-                    <div class="kpi-sublabel">6 VIP tables ($51,000) + 28 tickets ($11,060)</div>
+                    <div class="kpi-value purple">$64,035</div>
+                    <div class="kpi-sublabel">6 VIP tables ($51,000) + 33 tickets ($13,035)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Open Pipeline (SF)</div>
-                    <div class="kpi-value blue"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$20,160</a></div>
+                    <div class="kpi-value blue"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$11,265</a></div>
                     <div class="kpi-sublabel">4 opportunities</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Tables/Tickets Coverage</div>
-                    <div class="kpi-value orange">88.1%</div>
-                    <div class="kpi-sublabel">$374,380 of $425,000 goal — gap $50,620</div>
+                    <div class="kpi-value green">90.5%</div>
+                    <div class="kpi-sublabel">$384,460 of $425,000 goal — gap $40,540</div>
                 </div>
             </div>
 
@@ -188,7 +186,7 @@
                 <div class="progress-card">
                     <div class="progress-label">Sponsorship Revenue</div>
                     <div class="progress-bar-container">
-                        <div class="progress-bar green" style="width:100%;">116.7%</div>
+                        <div class="progress-bar green" style="width:100%;">121.5%</div>
                     </div>
                     <div class="progress-info">
                         <span>$255,109 of $210,000 goal</span>
@@ -198,13 +196,13 @@
                 <div class="progress-card">
                     <div class="progress-label">Tables/Tickets Revenue (SF + Splash Direct)</div>
                     <div class="stacked-bar">
-                        <div class="stacked-segment green" style="flex:5783;">SF: $312,320</div>
-                        <div class="stacked-segment purple" style="flex:1153;">Splash: $62,060</div>
-                        <div class="stacked-segment orange" style="flex:375;">Pipeline: $20,160</div>
+                        <div class="stacked-segment green" style="flex:5950;">SF: $320,425</div>
+                        <div class="stacked-segment purple" style="flex:1188;">Splash: $64,035</div>
+                        <div class="stacked-segment orange" style="flex:209;">Pipeline: $11,265</div>
                     </div>
                     <div class="progress-info">
-                        <span>$374,380 confirmed of $425,000 goal (88.1%)</span>
-                        <span style="color:#e74c3c;font-weight:600;">Gap to goal: $50,620</span>
+                        <span>$384,460 confirmed of $425,000 goal (90.5%)</span>
+                        <span style="color:#e74c3c;font-weight:600;">Gap to goal: $40,540</span>
                     </div>
                 </div>
             </div>
@@ -259,32 +257,32 @@
             <div class="kpi-row">
                 <div class="kpi-card">
                     <div class="kpi-label">Total Attending</div>
-                    <div class="kpi-value green">246</div>
+                    <div class="kpi-value green">307</div>
                     <div class="kpi-sublabel">Active registrations</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">VIP Reserved Table</div>
-                    <div class="kpi-value purple">58</div>
+                    <div class="kpi-value purple">59</div>
                     <div class="kpi-sublabel">Premium seating</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Invited Guests</div>
-                    <div class="kpi-value blue">111</div>
+                    <div class="kpi-value blue">164</div>
                     <div class="kpi-sublabel">Comp registrations</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Individual Tickets</div>
-                    <div class="kpi-value green">77</div>
+                    <div class="kpi-value green">84</div>
                     <div class="kpi-sublabel">Individual tickets</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Unique Emails</div>
-                    <div class="kpi-value blue">195</div>
+                    <div class="kpi-value blue">255</div>
                     <div class="kpi-sublabel">Distinct registrants</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">vs 2025 Pace</div>
-                    <div class="kpi-value green" style="font-size:24px;">211 vs 17 <span style="font-size:14px;color:#4ecb71;">at 59 days out</span></div>
+                    <div class="kpi-value orange" style="font-size:24px;">307 vs 350 <span style="font-size:14px;color:#e74c3c;">at 38 days out</span></div>
                     <div class="kpi-sublabel">2025 finished with 978 attendees</div>
                 </div>
             </div>
@@ -294,8 +292,8 @@
                 <div class="kpi-row">
                     <div class="kpi-card">
                         <div class="kpi-label">2026 Splash Revenue</div>
-                        <div class="kpi-value gold">$58,505</div>
-                        <div class="kpi-sublabel">25 paid: 19 individual ($7,505) + 6 VIP tables ($51,000)</div>
+                        <div class="kpi-value gold">$64,035</div>
+                        <div class="kpi-sublabel">39 paid: 33 individual ($13,035) + 6 VIP tables ($51,000)</div>
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-label">2025 Splash Revenue (Final)</div>
@@ -321,8 +319,8 @@
                     <div class="discount-card">
                         <h3>Code Breakdown</h3>
                         <table class="discount-table">
-                            <tr><td>No Code</td><td>145</td></tr>
-                            <tr><td>PARTNERVA26</td><td>59</td></tr>
+                            <tr><td>No Code</td><td>203</td></tr>
+                            <tr><td>PARTNERVA26</td><td>62</td></tr>
                             <tr><td>FINALISTVA26</td><td>24</td></tr>
                             <tr><td>PASTHONOREE26</td><td>6</td></tr>
                             <tr><td>HONOREE26</td><td>4</td></tr>
@@ -337,12 +335,14 @@
                     <div class="discount-card">
                         <h3>Paid vs Comp Summary</h3>
                         <table class="discount-table">
-                            <tr><td>Comp/Invited (no code)</td><td>72</td></tr>
-                            <tr><td>Partner Code</td><td>48</td></tr>
-                            <tr><td>Finalist Code</td><td>17</td></tr>
-                            <tr><td>Paid (Individual, no code)</td><td>13</td></tr>
-                            <tr><td>Other Named Codes</td><td>3</td></tr>
-                            <tr><td>Test Code (1 active)</td><td>1</td></tr>
+                            <tr><td>Comp/Invited (no code)</td><td>164</td></tr>
+                            <tr><td>Partner Code</td><td>62</td></tr>
+                            <tr><td>Finalist Code</td><td>24</td></tr>
+                            <tr><td>Paid Individual (no code)</td><td>33</td></tr>
+                            <tr><td>Past Honoree Code</td><td>6</td></tr>
+                            <tr><td>EIC Code</td><td>3</td></tr>
+                            <tr><td>Other Named Codes</td><td>4</td></tr>
+                            <tr><td>Test Code (active)</td><td>1</td></tr>
                         </table>
                     </div>
                 </div>
@@ -352,7 +352,7 @@
                 <div class="chart-card">
                     <h3>Registration Pace — 2026 vs 2025</h3>
                     <div style="display:flex;gap:16px;margin-bottom:12px;font-size:11px;">
-                        <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:3px;background:#d4a437;display:inline-block;border-radius:2px;"></span><span style="color:#d4a437;">2026 (157 so far)</span></span>
+                        <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:3px;background:#d4a437;display:inline-block;border-radius:2px;"></span><span style="color:#d4a437;">2026 (307 so far)</span></span>
                         <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:3px;background:#5dade2;display:inline-block;border-radius:2px;opacity:0.6;"></span><span style="color:#5dade2;opacity:0.7;">2025 Final (978)</span></span>
                     </div>
                     <div class="chart-container" id="rsvpPaceChart"></div>
@@ -378,34 +378,35 @@
             <div class="section">
                 <div class="section-title">Additional Registration Details</div>
                 <div class="dietary-grid" style="margin-bottom:30px;">
-                    <div class="dietary-item none"><div class="dietary-label">No Restrictions</div><div class="dietary-value">77</div></div>
-                    <div class="dietary-item critical"><div class="dietary-label">Nut Allergy (CRITICAL)</div><div class="dietary-value">1</div><div style="font-size:11px;margin-top:8px;color:#e74c3c;">Anaphylactic to Walnuts</div></div>
-                    <div class="dietary-item"><div class="dietary-label">Shellfish</div><div class="dietary-value">3</div></div>
-                    <div class="dietary-item"><div class="dietary-label">No Pork</div><div class="dietary-value">2</div></div>
-                    <div class="dietary-item"><div class="dietary-label">No Red Meat</div><div class="dietary-value">2</div></div>
-                    <div class="dietary-item"><div class="dietary-label">Vegetarian</div><div class="dietary-value">2</div></div>
-                    <div class="dietary-item"><div class="dietary-label">Vegetarian/Gluten-Free</div><div class="dietary-value">1</div></div>
-                    <div class="dietary-item"><div class="dietary-label">No Response</div><div class="dietary-value">69</div></div>
+                    <div class="dietary-item none"><div class="dietary-label">No Restrictions</div><div class="dietary-value">223</div></div>
+                    <div class="dietary-item critical"><div class="dietary-label">Nut Allergy (CRITICAL)</div><div class="dietary-value">3</div><div style="font-size:11px;margin-top:8px;color:#e74c3c;">Incl. anaphylactic to walnuts</div></div>
+                    <div class="dietary-item"><div class="dietary-label">Shellfish/Seafood</div><div class="dietary-value">7</div></div>
+                    <div class="dietary-item"><div class="dietary-label">Vegetarian</div><div class="dietary-value">8</div></div>
+                    <div class="dietary-item"><div class="dietary-label">No Pork</div><div class="dietary-value">6</div></div>
+                    <div class="dietary-item"><div class="dietary-label">No Red Meat</div><div class="dietary-value">6</div></div>
+                    <div class="dietary-item"><div class="dietary-label">Gluten-Free</div><div class="dietary-value">2</div></div>
+                    <div class="dietary-item"><div class="dietary-label">Lactose-Intolerant</div><div class="dietary-value">2</div></div>
+                    <div class="dietary-item"><div class="dietary-label">No Response</div><div class="dietary-value">51</div></div>
                 </div>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:30px;">
                     <div class="kpi-card">
                         <div class="kpi-label">GDPR Agreement</div>
                         <div style="display:flex;gap:10px;margin-top:12px;">
-                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#4ecb71;">192</div><div style="font-size:11px;color:#666;">Agreed</div></div>
-                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#e74c3c;">5</div><div style="font-size:11px;color:#666;">Declined</div></div>
-                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#555;">49</div><div style="font-size:11px;color:#666;">No Response</div></div>
+                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#4ecb71;">250</div><div style="font-size:11px;color:#666;">Agreed</div></div>
+                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#e74c3c;">7</div><div style="font-size:11px;color:#666;">Declined</div></div>
+                            <div style="flex:1;"><div style="font-size:24px;font-weight:700;color:#555;">50</div><div style="font-size:11px;color:#666;">No Response</div></div>
                         </div>
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-label">Test Registrations Revoked</div>
-                        <div style="font-size:32px;font-weight:700;color:#d4a437;margin-top:12px;">8</div>
+                        <div style="font-size:32px;font-weight:700;color:#d4a437;margin-top:12px;">10</div>
                         <div style="font-size:12px;color:#666;margin-top:8px;">Revoked test/duplicate registrations</div>
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">All Registrations (246 Active)</div>
+                <div class="section-title">All Registrations (307 Active)</div>
                 <div class="table-section">
                     <div class="table-controls">
                         <input type="text" class="control-input" id="registrationSearchInput" placeholder="Search name or company...">
@@ -445,76 +446,75 @@
             <div class="kpi-row">
                 <div class="kpi-card">
                     <div class="kpi-label">Inconsistencies Found</div>
-                    <div class="kpi-value red">5</div>
+                    <div class="kpi-value red">6</div>
                     <div class="kpi-sublabel">Items with discrepancies</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">JoAnn Only (Not in SF)</div>
-                    <div class="kpi-value orange">1</div>
-                    <div class="kpi-sublabel">Hyatt Alliance — needs SF record</div>
+                    <div class="kpi-value orange">2</div>
+                    <div class="kpi-sublabel">Omni Hotels + Visit Denver</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Salesforce Only (Not in JoAnn's)</div>
-                    <div class="kpi-value orange">2</div>
-                    <div class="kpi-sublabel">Visit Savannah + Smart City Networks</div>
+                    <div class="kpi-value orange">1</div>
+                    <div class="kpi-sublabel">Heritage — new $0 pipeline entry</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">JoAnn Tracker Total</div>
                     <div class="kpi-value gold">$369,500</div>
-                    <div class="kpi-sublabel">Tables goal: 50 × $8,500 = $425K</div>
+                    <div class="kpi-sublabel">Tables goal: 50 x $8,500 = $425K</div>
                 </div>
             </div>
 
-            <!-- Goals Banner -->
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:30px;">
                 <div class="kpi-card" style="border-color:#d4a43744;">
                     <div class="kpi-label">Goal: Tables</div>
-                    <div class="kpi-value orange" style="font-size:22px;">50 × $8,500</div>
-                    <div class="kpi-sublabel">= $425,000 target (updated Mar 17)</div>
+                    <div class="kpi-value orange" style="font-size:22px;">50 x $8,500</div>
+                    <div class="kpi-sublabel">= $425,000 target</div>
                 </div>
                 <div class="kpi-card" style="border-color:#5dade244;">
                     <div class="kpi-label">Goal: Individual Tickets</div>
-                    <div class="kpi-value blue" style="font-size:22px;">200 × $395</div>
+                    <div class="kpi-value blue" style="font-size:22px;">200 x $395</div>
                     <div class="kpi-sublabel">= $79,000 target</div>
                 </div>
                 <div class="kpi-card" style="border-color:#4ecb7144;">
                     <div class="kpi-label">Goal: Mini Lounges</div>
-                    <div class="kpi-value green" style="font-size:22px;">4 × $17.5K–$25K</div>
+                    <div class="kpi-value green" style="font-size:22px;">4 x $17.5K–$25K</div>
                     <div class="kpi-sublabel">Premium sponsor activations</div>
                 </div>
             </div>
 
             <div class="change-tracking-card">
-                <h3>Changes in Last 7 Days (Mar 17 — Mar 23, 2026)</h3>
+                <h3>Changes in Last 7 Days (Mar 23 — Mar 30, 2026)</h3>
                 <div class="change-item">
                     <div class="change-subtitle">New Salesforce Closes</div>
                     <div class="change-detail">
-                        <strong>Miles Partnership — Closed Won Sponsorship</strong> $10,000 (3/19/2026, Supplier of the Year — moved from pipeline)<br>
-                        <strong>No new table/ticket closes</strong> this week — Tables/Tix confirmed holds at $312,320<br>
-                        <strong>Pipeline:</strong> $30,160 → $20,160 (down 2 opps — Miles closed, NYC Tourism modified 3/19 now Buying Decision)
+                        <strong>Houston First Corporation — Closed Won</strong> $8,500 (3/23/2026, moved from pipeline)<br>
+                        Sponsorship unchanged at $255,109. Choose Chicago modified 3/30 — no amount change.<br>
+                        <strong>Pipeline note:</strong> Oak View now $790 (was $1,580), Experience Columbus now $1,975 (was $1,580). <strong>New entry: Heritage - Visionary Awards 2026 at $0</strong> — Buying Decision, modified 3/27. Likely a placeholder needing an amount.
                     </div>
                 </div>
                 <div class="change-item">
-                    <div class="change-subtitle">New Splash Registrations (Mar 17 — Mar 23)</div>
+                    <div class="change-subtitle">New Splash Registrations (Mar 23 — Mar 30)</div>
                     <div class="change-detail">
-                        <strong>+35 new registrations</strong> (211 → 246 attending)<br>
-                        <strong>Mar 18–19:</strong> Ariadni Pereira (paid $395 / Olympian Meeting), Colleen Phalen (PARTNERVA26 / Miles Partnership), Claire Smith (Vancouver Convention Centre), John Loveless (GES), Joy Womack (AAMC), Krista LeZotte (ASHA), Diane Kovats (ISCB), Carol Wallace (paid $395 / San Diego Theatres)<br>
-                        <strong>Mar 20:</strong> 10 new — TMS team (Meredith Douglas, Dan Sherman, Danielle Foisy — all paid $395), Kireem Swinton (paid $395 / Visit Baltimore), Drew Squeglia (paid $395 / Hyatt Hotels), <strong>3 EICVA26 registrants</strong> (Annette Gregg/SITE, Natasha Richards/IMEX, Don Welsh/Destinations Intl), Shari Weinstein, Laurie Nelson-Choice (PARTNERVA26)<br>
-                        <strong>Mar 22:</strong> Mary Gallagher (Los Angeles Tourism)<br>
-                        <strong>New codes:</strong> PASTHONOREE26 (6 past honorees) and EICVA26 (3 industry leaders)
+                        <strong>+61 new registrations</strong> (246 to 307) — biggest single-week jump of the cycle<br>
+                        <strong>Mar 23:</strong> Meet Long Beach (3), American School Counselor Assoc (2), NAEYC, Optica, Tara Meehan (paid $395)<br>
+                        <strong>Mar 24:</strong> PHLCVB team (Gregg Caren, Kevin Holland, Maria Grasso), Destination Canada, LVCVA, Oklahoma City CC, and others<br>
+                        <strong>Mar 25:</strong> Freeman team (4), Louisville Tourism (2), Ottawa Tourism, GES, Visit Fort Worth, Jayne Carmona (paid $395), and 8 others<br>
+                        <strong>Mar 26:</strong> Visit Houston (2), Bonnie Greenspan (paid $395 / Hyatt Hotels), Nancy DeBrosse (paid $395 / Cadmium), Freeman Chicago, American Psychiatric Assoc<br>
+                        <strong>Mar 27:</strong> FLORENCE Houlahan (paid $395 / Fairmont), Amy Beers (AAMC), SCAI, NCSS, National Art Education Assoc
                     </div>
                 </div>
                 <div class="change-item">
-                    <div class="change-subtitle">Splash Revenue</div>
+                    <div class="change-subtitle">Revenue</div>
                     <div class="change-detail">
-                        Splash revenue: $58,505 → <strong>$62,060</strong> (+$3,555). VIP tables unchanged at 6 ($51,000). Individual ticket revenue up: $7,505 → <strong>$11,060</strong> (28 paid tickets, up from 19). Combined total revenue (SF + Splash): <strong>$629,489</strong>.
+                        SF tables up $8,105 (Houston First closed). Splash up $1,975. Combined total: <strong>$639,569</strong>. Tables/tickets now at <strong>90.5%</strong> of $425K goal — gap down to $40,540.
                     </div>
                 </div>
                 <div class="change-item">
-                    <div class="change-subtitle">JoAnn Tracker Updates</div>
+                    <div class="change-subtitle">Registration Pace — Watch Closely</div>
                     <div class="change-detail">
-                        Tracker total up $344K → <strong>$369,500</strong>. New entries: <strong>Omni Hotels</strong> (Katie Kirby, Reg, $8,500), <strong>Javits Center #2</strong> (second table, $8,500), <strong>Visit Denver</strong> ($8,500, Stephanie Murnan). <strong>Hyatt Convention Alliance removed</strong> from tracker. NYC Tourism now shows 2 seat entries.
-                        <br>SF quick links: <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;">Dashboard</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:#d4a437;">Sponsorship</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:#d4a437;">Pipeline</a>
+                        307 attending at 38 days out vs approximately 350 at this point in 2025. First week where 2026 is running slightly behind last year's pace. 2025 finished at 978. Worth monitoring over the next two weeks.
                     </div>
                 </div>
             </div>
@@ -535,20 +535,28 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td><strong>Experience Columbus</strong></td>
+                                <td>$8,500</td>
+                                <td>$1,975 (pipeline)</td>
+                                <td>-$6,525</td>
+                                <td><span class="flag-badge amount">AMOUNT</span></td>
+                                <td>SF amount changed again: $1,580 to $1,975 (modified 3/25), still Buying Decision. JoAnn has $8,500 confirmed. Four weeks unresolved — please correct SF.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heritage - Visionary Awards 2026</strong></td>
+                                <td>—</td>
+                                <td>$0 (pipeline)</td>
+                                <td>—</td>
+                                <td><span class="flag-badge status">NEW</span></td>
+                                <td>New SF pipeline entry at $0, Buying Decision (modified 3/27). Not in JoAnn's tracker. Confirm if real deal and add amount.</td>
+                            </tr>
+                            <tr>
                                 <td><strong>Omni Hotels</strong></td>
                                 <td>$8,500</td>
                                 <td>—</td>
                                 <td>$8,500</td>
                                 <td><span class="flag-badge status">MISSING</span></td>
-                                <td>New in JoAnn's tracker this week (Katie Kirby, kkirby@omnihotels.com, Reg). No SF record. Needs to be created or confirmed as direct Splash purchase.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Javits Center #2</strong></td>
-                                <td>$8,500</td>
-                                <td>—</td>
-                                <td>$8,500</td>
-                                <td><span class="flag-badge status">MISSING</span></td>
-                                <td>JoAnn has two Javits Center entries ($8,500 each). SF only has one. Second table may be a direct Splash purchase — confirm with Joyce Leveston.</td>
+                                <td>In JoAnn's tracker (Katie Kirby, kkirby@omnihotels.com, Reg). No SF record. Confirm if direct Splash purchase or needs SF opportunity.</td>
                             </tr>
                             <tr>
                                 <td><strong>Visit Denver</strong></td>
@@ -556,23 +564,15 @@
                                 <td>—</td>
                                 <td>$8,500</td>
                                 <td><span class="flag-badge status">MISSING</span></td>
-                                <td>New in JoAnn's tracker this week (smurnan@visitdenver.com — Stephanie Murnan). No SF record yet. Create opportunity.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Experience Columbus</strong></td>
-                                <td>$8,500</td>
-                                <td>$1,580 (pipeline)</td>
-                                <td>-$6,920</td>
-                                <td><span class="flag-badge amount">AMOUNT</span></td>
-                                <td>SF changed from $8,500 → $1,580 on 3/11 (Buying Decision). JoAnn still has $8,500. Three weeks unresolved — verify and correct SF.</td>
+                                <td>In JoAnn's tracker (Stephanie Murnan, smurnan@visitdenver.com). No SF record. Create opportunity.</td>
                             </tr>
                             <tr>
                                 <td><strong>NYC Tourism + Conventions</strong></td>
-                                <td>$8,500 × 2 entries</td>
+                                <td>$8,500 x 2 entries</td>
                                 <td>$8,500 (pipeline)</td>
                                 <td>Structure</td>
                                 <td><span class="flag-badge structure">STRUCTURE</span></td>
-                                <td>JoAnn now has two NYC Tourism entries (Ben + Tara Singh, both Highboy). SF shows one $8,500 Buying Decision (modified 3/19). Confirm if two tables are expected.</td>
+                                <td>JoAnn has two entries (Ben + Tara Singh, both Highboy). SF shows one $8,500 Buying Decision. If two tables expected, create a second SF opp.</td>
                             </tr>
                             <tr>
                                 <td><strong>New Orleans &amp; Company</strong></td>
@@ -587,176 +587,127 @@
                 </div>
             </div>
 
-            <!-- Splash-only paid tables not in tracker -->
-            <div class="section">
-                <div class="section-title">Splash Paid — Now Reconciled</div>
-                <div class="table-section">
-                    <table class="inconsistency-table">
-                        <thead>
-                            <tr><th>Organization</th><th>Splash Price</th><th>Date</th><th>Status</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Smart City Networks</strong> (Dennis O'Gara)</td>
-                                <td>$8,500</td>
-                                <td>2026-03-05</td>
-                                <td>Paid VIP table via Splash — still no SF record and not in JoAnn's tracker. Action needed.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Visit Savannah</strong></td>
-                                <td>$395</td>
-                                <td>2026-03-09</td>
-                                <td>SF closed 3/9/2026 ✓. In JoAnn's tracker ✓. Resolved.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>IMEX Group</strong></td>
-                                <td>$395</td>
-                                <td>2026-03-10</td>
-                                <td>SF closed 3/10/2026 ✓. In JoAnn's tracker ✓. Resolved.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Omni Hotels</strong> (Katie Kirby)</td>
-                                <td>$8,500</td>
-                                <td>2026-03-11</td>
-                                <td>Marked "Reg" in JoAnn's tracker — likely direct Splash purchase. No SF record. Confirm if expected to have SF opp.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
             <div class="recommendations-card">
                 <h3>Recommendations</h3>
                 <div class="recommendation-item">
-                    <strong>Create SF Records — Omni Hotels, Visit Denver:</strong> Both are new in JoAnn's tracker this week with contact emails. Neither has an SF opportunity. Omni Hotels: Katie Kirby (kkirby@omnihotels.com). Visit Denver: Stephanie Murnan (smurnan@visitdenver.com).
+                    <strong>Experience Columbus — 4 Weeks Unresolved:</strong> SF amount has changed twice ($8,500 to $1,580 to $1,975). JoAnn still has $8,500. Please correct SF this week before it affects reporting.
                 </div>
                 <div class="recommendation-item">
-                    <strong>Clarify Javits Center #2:</strong> JoAnn has two Javits entries at $8,500 each. SF has one. Confirm with Joyce Leveston if the second table was a direct purchase (no SF record needed) or a new deal to enter.
+                    <strong>Heritage - Visionary Awards 2026:</strong> New $0 pipeline entry in SF (Buying Decision, modified 3/27). Not in JoAnn's tracker. Confirm if real and update the amount.
                 </div>
                 <div class="recommendation-item">
-                    <strong>Fix Experience Columbus in SF (3 weeks open):</strong> JoAnn has $8,500 confirmed. SF shows $1,580 Buying Decision since 3/11. Almost certainly a data entry error — please correct in SF.
+                    <strong>Create SF Records — Omni Hotels + Visit Denver (2 weeks open):</strong> Omni Hotels: Katie Kirby (kkirby@omnihotels.com). Visit Denver: Stephanie Murnan (smurnan@visitdenver.com).
                 </div>
                 <div class="recommendation-item">
-                    <strong>NYC Tourism — Confirm Two Tables:</strong> JoAnn now has two entries (Ben + Tara Singh). SF still shows one $8,500 opp at Buying Decision. If two tables are expected, a second SF opportunity should be created.
+                    <strong>NYC Tourism — Two Tables:</strong> JoAnn has two entries (Ben + Tara Singh). SF shows one $8,500 Buying Decision. If two tables expected, create a second SF opp.
                 </div>
                 <div class="recommendation-item">
-                    <strong>SF Quick Links:</strong> <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;">VA Dashboard</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:#d4a437;">Sponsorship Confirmed</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix Confirmed</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWajMAG/view" target="_blank" style="color:#d4a437;">Sponsorship Pipeline</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix Pipeline</a>
+                    <strong>Registration Pace:</strong> 307 at 38 days out vs ~350 at this point last year. First week running slightly behind 2025. Monitor closely as we enter the final stretch.
                 </div>
                 <div class="recommendation-item">
-                    <strong>Registration:</strong> 246 attending at 45 days out vs 35 at this point last year. Individual ticket revenue up significantly ($7,505 → $11,060). New codes PASTHONOREE26 (6) and EICVA26 (3) confirm honoree and industry outreach is converting. Critical nut allergy (anaphylactic to walnuts) still on file. RegTestComp26 still has 1 active registration to revoke.
+                    <strong>Dietary — Nut Allergies:</strong> Now 3 nut allergy registrants (up from 1 last week), including at least one anaphylactic to walnuts. Ensure catering team is aware.
+                </div>
+                <div class="recommendation-item">
+                    <strong>SF Quick Links:</strong> <a href="https://mypcma.lightning.force.com/lightning/r/Dashboard/01ZRg000009diVRMAY/view" target="_blank" style="color:#d4a437;">VA Dashboard</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QWXVMA4/view" target="_blank" style="color:#d4a437;">Sponsorship</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXjhMAG/view" target="_blank" style="color:#d4a437;">Tables/Tix</a> · <a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:#d4a437;">Pipeline</a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <strong>Dashboard Last Updated:</strong> Mar 23, 2026 | Data sources: Salesforce (4 reports) + Splash direct purchases | Revenue = SF + Splash combined | Self-contained HTML
-    </footer>
-
-    
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <strong>Dashboard Last Updated:</strong> Mar 23, 2026 | Data sources: Salesforce (4 reports) + Splash direct purchases | Revenue = SF + Splash combined | Self-contained HTML
+        <strong>Dashboard Last Updated:</strong> Mar 30, 2026 | Data sources: Salesforce (3 reports) + Splash direct purchases | Revenue = SF + Splash combined | Self-contained HTML
     </footer>
 
     <script>
-        const sponsorshipOpportunities = [
-            {name:"Destination Toronto 2026 Experience Partnership",amount:30000,close:"2/12/2026",type:"sponsorship",stage:"Closed Won"},
-            {name:"Hilton FYDec2025-26 Engage Partnership",amount:25000,close:"2/3/2026",type:"sponsorship",stage:"Closed Won"},
-            {name:"Visit Austin FYOct-2025-26 Excel Partnership",amount:60000,close:"12/15/2025",type:"sponsorship",stage:"Closed Won"},
-            {name:"Philadelphia CVB - FY July 2025-26 Engage Partnership",amount:20000,close:"9/3/2025",type:"sponsorship",stage:"Closed Won"},
-            {name:"Miles Partnership - 2026 Visionary Awards Sponsor",amount:10000,close:"3/19/2026",type:"sponsorship",stage:"Closed Won"},
-            {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:10000,close:"10/29/2025",type:"sponsorship",stage:"Closed Won"},
-            {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:15000,close:"10/29/2025",type:"sponsorship",stage:"Closed Won"},
-            {name:"Las Vegas Convention and Visitors Authority - 2026 CEMA Visionary Awards",amount:20000,close:"2/4/2026",type:"sponsorship",stage:"Closed Won"},
-            {name:"Visit California ACTIVATION CREDITS FY25-26",amount:30109,close:"2/20/2026",type:"sponsorship",stage:"Closed Won"},
-            {name:"Freeman 2025-2026 Explore Sponsor",amount:15000,close:"8/27/2025",type:"sponsorship",stage:"Closed Won"},
-            {name:"Visit Oklahoma City FY25-26 Engage Level",amount:20000,close:"6/13/2025",type:"sponsorship",stage:"Closed Won"}
-        ];
+const sponsorshipOpportunities = [
+  {name:"Destination Toronto 2026 Experience Partnership",amount:30000,close:"2/12/2026",type:"sponsorship",stage:"Closed Won"},
+  {name:"Hilton FYDec2025-26 Engage Partnership",amount:25000,close:"2/3/2026",type:"sponsorship",stage:"Closed Won"},
+  {name:"Visit Austin FYOct-2025-26 Excel Partnership",amount:60000,close:"12/15/2025",type:"sponsorship",stage:"Closed Won"},
+  {name:"Philadelphia CVB - FY July 2025-26 Engage Partnership",amount:20000,close:"9/3/2025",type:"sponsorship",stage:"Closed Won"},
+  {name:"Miles Partnership - 2026 Visionary Awards Sponsor",amount:10000,close:"3/19/2026",type:"sponsorship",stage:"Closed Won"},
+  {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:10000,close:"10/29/2025",type:"sponsorship",stage:"Closed Won"},
+  {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:15000,close:"10/29/2025",type:"sponsorship",stage:"Closed Won"},
+  {name:"Las Vegas Convention and Visitors Authority - 2026 CEMA Visionary Awards",amount:20000,close:"2/4/2026",type:"sponsorship",stage:"Closed Won"},
+  {name:"Visit California ACTIVATION CREDITS FY25-26",amount:30109,close:"2/20/2026",type:"sponsorship",stage:"Closed Won"},
+  {name:"Freeman 2025-2026 Explore Sponsor",amount:15000,close:"8/27/2025",type:"sponsorship",stage:"Closed Won"},
+  {name:"Visit Oklahoma City FY25-26 Engage Level",amount:20000,close:"6/13/2025",type:"sponsorship",stage:"Closed Won"}
+];
 
-        const tableOpportunities = [
-            {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:2250,close:"10/29/2025",type:"table",stage:"Closed Won"},
-            {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:8500,close:"10/29/2025",type:"table",stage:"Closed Won"},
-            {name:"Boston Convention Marketing Center & Meet Boston - FYJuly2025-26 Experience Partnership",amount:1185,close:"9/5/2025",type:"table",stage:"Closed Won"},
-            {name:"Boston Convention Marketing Center & Meet Boston - FYJuly2025-26 Experience Partnership",amount:8500,close:"9/5/2025",type:"table",stage:"Closed Won"},
-            {name:"Caesars Entertainment FY2025/2026 Engage Partnership",amount:8500,close:"10/27/2025",type:"table",stage:"Closed Won"},
-            {name:"Choose Chicago - 2026 ENGAGE Partner",amount:8500,close:"11/11/2025",type:"table",stage:"Closed Won"},
-            {name:"Convene Sponsorship 2026",amount:5000,close:"12/22/2025",type:"table",stage:"Closed Won"},
-            {name:"Destination Cleveland - 2026 Experience Partnership",amount:8500,close:"11/5/2025",type:"table",stage:"Closed Won"},
-            {name:"Destination DC - Oct2025-2026 Engage Partnership",amount:8500,close:"3/12/2026",type:"table",stage:"Closed Won"},
-            {name:"Destination Vancouver and Vancouver Convention Centre 2026 Engage Partnership",amount:8500,close:"12/8/2025",type:"table",stage:"Closed Won"},
-            {name:"Encore - 2026 - Engage Partnership",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
-            {name:"Explore Edmonton - 2026 Visionary Awards Sponsor",amount:8500,close:"2/23/2026",type:"table",stage:"Closed Won"},
-            {name:"GES | onPeak 2026 Explore Sponsor",amount:8500,close:"11/21/2025",type:"table",stage:"Closed Won"},
-            {name:"Greater Miami CVB 2025-2026 Experience Partnership",amount:8500,close:"10/3/2025",type:"table",stage:"Closed Won"},
-            {name:"IHG Hotels & Resorts 2026 Engage Partnership",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
-            {name:"IMEX Group - 2026 Visionary Awards Ticket Purchase",amount:395,close:"3/10/2026",type:"table",stage:"Closed Won"},
-            {name:"Las Vegas Convention and Visitors Authority - 2025-2026 Explore Level",amount:8500,close:"10/23/2025",type:"table",stage:"Closed Won"},
-            {name:"Long Beach CVB FY25-26 Explore Level",amount:8500,close:"10/23/2025",type:"table",stage:"Closed Won"},
-            {name:"Louisville Tourism FYJuly2025-26 Engage Partnership",amount:8000,close:"5/29/2025",type:"table",stage:"Closed Won"},
-            {name:"Maritz 2025-2026  Sponsorship Agreement",amount:8500,close:"10/16/2025",type:"table",stage:"Closed Won"},
-            {name:"Meet Minneapolis - 2025-2026 EXPLORE",amount:8000,close:"10/29/2025",type:"table",stage:"Closed Won"},
-            {name:"MGM Resorts International - 2025-2026 - Engage Partnership",amount:8500,close:"10/28/2025",type:"table",stage:"Closed Won"},
-            {name:"Nashville CVC 2025-2026 EXPLORE",amount:8500,close:"9/17/2025",type:"table",stage:"Closed Won"},
-            {name:"New Orleans & Company 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
-            {name:"New Orleans Ernest N. Morial Convention Center 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
-            {name:"Ottawa Tourism 2026 Explore Marketing Agreement",amount:8500,close:"1/21/2026",type:"table",stage:"Closed Won"},
-            {name:"Projection - 2026 Visionary Awards Table/Tickets",amount:8500,close:"3/3/2026",type:"table",stage:"Closed Won"},
-            {name:"San Diego 2026 Visionary Awards Sponsorship",amount:8500,close:"2/11/2026",type:"table",stage:"Closed Won"},
-            {name:"Tourism Calgary 2026 Engage Partnership",amount:1580,close:"1/22/2026",type:"table",stage:"Closed Won"},
-            {name:"Travel Portland FY25/2026 Engage Partnership",amount:2250,close:"9/30/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Anaheim - 2025-2026 - Engage Partnership",amount:8500,close:"1/2/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit Cincy - 2026 Explore",amount:8500,close:"3/11/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit Fort Worth - 2025/2026 - Engage Partnership",amount:8500,close:"12/15/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Greater Palm Springs - 2025-2026 - Engage Partnership",amount:8500,close:"12/29/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Indy - 2026 - Engage Partnership",amount:8500,close:"1/21/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit KC - 2026 Engage Partnership",amount:8500,close:"12/23/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Lauderdale 2026 Explore Marketing Agreement",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit Milwaukee - 2025-2026 - Engage Partnership",amount:1580,close:"12/5/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Omaha FY26 Explore Sponsorship",amount:8500,close:"1/19/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit Orlando - 2026 Excel Partnership",amount:8500,close:"11/5/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Salt Lake 2026 Engage Partnership",amount:8500,close:"12/16/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit San Antonio FY26 - Explore Sponsor",amount:8500,close:"12/29/2025",type:"table",stage:"Closed Won"},
-            {name:"Visit Savannah - 2026 Visionary Awards Ticket",amount:395,close:"3/9/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit Seattle - 2026 - Experience Partnership",amount:1185,close:"3/10/2026",type:"table",stage:"Closed Won"},
-            {name:"Visit Tampa Bay - 2025-2026 Excel Partnership",amount:8500,close:"10/14/2025",type:"table",stage:"Closed Won"}
-        ];
+const tableOpportunities = [
+  {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:2250,close:"10/29/2025",type:"table",stage:"Closed Won"},
+  {name:"Atlanta Convention and Visitors Bureau - 2025-2026 ENGAGE Partnership",amount:8500,close:"10/29/2025",type:"table",stage:"Closed Won"},
+  {name:"Boston Convention Marketing Center and Meet Boston - FYJuly2025-26 Experience Partnership",amount:1185,close:"9/5/2025",type:"table",stage:"Closed Won"},
+  {name:"Boston Convention Marketing Center and Meet Boston - FYJuly2025-26 Experience Partnership",amount:8500,close:"9/5/2025",type:"table",stage:"Closed Won"},
+  {name:"Caesars Entertainment FY2025/2026 Engage Partnership",amount:8500,close:"10/27/2025",type:"table",stage:"Closed Won"},
+  {name:"Choose Chicago - 2026 ENGAGE Partner",amount:8500,close:"11/11/2025",type:"table",stage:"Closed Won"},
+  {name:"Convene Sponsorship 2026",amount:5000,close:"12/22/2025",type:"table",stage:"Closed Won"},
+  {name:"Destination Cleveland - 2026 Experience Partnership",amount:8500,close:"11/5/2025",type:"table",stage:"Closed Won"},
+  {name:"Destination DC - Oct2025-2026 Engage Partnership",amount:8500,close:"3/12/2026",type:"table",stage:"Closed Won"},
+  {name:"Destination Vancouver and Vancouver Convention Centre 2026 Engage Partnership",amount:8500,close:"12/8/2025",type:"table",stage:"Closed Won"},
+  {name:"Encore - 2026 - Engage Partnership",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
+  {name:"Explore Edmonton - 2026 Visionary Awards Sponsor",amount:8500,close:"2/23/2026",type:"table",stage:"Closed Won"},
+  {name:"GES | onPeak 2026 Explore Sponsor",amount:8500,close:"11/21/2025",type:"table",stage:"Closed Won"},
+  {name:"Greater Miami CVB 2025-2026 Experience Partnership",amount:8500,close:"10/3/2025",type:"table",stage:"Closed Won"},
+  {name:"Houston First Corporation - 2026 - Engage Partnership",amount:8500,close:"3/23/2026",type:"table",stage:"Closed Won"},
+  {name:"IHG Hotels and Resorts 2026 Engage Partnership",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
+  {name:"Las Vegas Convention and Visitors Authority - 2025-2026 Explore Level",amount:8500,close:"10/23/2025",type:"table",stage:"Closed Won"},
+  {name:"Long Beach CVB FY25-26 Explore Level",amount:8500,close:"10/23/2025",type:"table",stage:"Closed Won"},
+  {name:"Louisville Tourism FYJuly2025-26 Engage Partnership",amount:8000,close:"5/29/2025",type:"table",stage:"Closed Won"},
+  {name:"Maritz 2025-2026  Sponsorship Agreement",amount:8500,close:"10/16/2025",type:"table",stage:"Closed Won"},
+  {name:"Meet Minneapolis - 2025-2026 EXPLORE",amount:8000,close:"10/29/2025",type:"table",stage:"Closed Won"},
+  {name:"MGM Resorts International - 2025-2026 - Engage Partnership",amount:8500,close:"10/28/2025",type:"table",stage:"Closed Won"},
+  {name:"Nashville CVC 2025-2026 EXPLORE",amount:8500,close:"9/17/2025",type:"table",stage:"Closed Won"},
+  {name:"New Orleans and Company 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
+  {name:"New Orleans Ernest N. Morial Convention Center 2026 Excel Partnership",amount:4250,close:"2/3/2026",type:"table",stage:"Closed Won"},
+  {name:"Ottawa Tourism 2026 Explore Marketing Agreement",amount:8500,close:"1/21/2026",type:"table",stage:"Closed Won"},
+  {name:"Projection - 2026 Visionary Awards Table/Tickets",amount:8500,close:"3/3/2026",type:"table",stage:"Closed Won"},
+  {name:"San Diego 2026 Visionary Awards Sponsorship",amount:8500,close:"2/11/2026",type:"table",stage:"Closed Won"},
+  {name:"Tourism Calgary 2026 Engage Partnership",amount:1580,close:"1/22/2026",type:"table",stage:"Closed Won"},
+  {name:"Travel Portland FY25/2026 Engage Partnership",amount:2250,close:"9/30/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Anaheim - 2025-2026 - Engage Partnership",amount:8500,close:"1/2/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit Cincy - 2026 Explore",amount:8500,close:"3/11/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit Fort Worth - 2025/2026 - Engage Partnership",amount:8500,close:"12/15/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Greater Palm Springs - 2025-2026 - Engage Partnership",amount:8500,close:"12/29/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Indy - 2026 - Engage Partnership",amount:8500,close:"1/21/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit KC - 2026 Engage Partnership",amount:8500,close:"12/23/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Lauderdale 2026 Explore Marketing Agreement",amount:8500,close:"1/8/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit Milwaukee - 2025-2026 - Engage Partnership",amount:1580,close:"12/5/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Omaha FY26 Explore Sponsorship",amount:8500,close:"1/19/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit Orlando - 2026 Excel Partnership",amount:8500,close:"11/5/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Salt Lake 2026 Engage Partnership",amount:8500,close:"12/16/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit San Antonio FY26 - Explore Sponsor",amount:8500,close:"12/29/2025",type:"table",stage:"Closed Won"},
+  {name:"Visit Savannah - 2026 Visionary Awards Ticket",amount:395,close:"3/9/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit Seattle - 2026 - Experience Partnership",amount:1185,close:"3/10/2026",type:"table",stage:"Closed Won"},
+  {name:"Visit Tampa Bay - 2025-2026 Excel Partnership",amount:8500,close:"10/14/2025",type:"table",stage:"Closed Won"}
+];
 
-        const pipelineOpportunities = [
-            {name:"Oak View Group 2026 Engage Partnership",amount:1580,close:"3/6/2026",type:"table",stage:"Buying Decision"},
-            {name:"Experience Columbus 2026 Engage Partnership",amount:1580,close:"3/13/2026",type:"table",stage:"Buying Decision"},
-            {name:"New York City Tourism + Conventions - 2026 Visionary Awards",amount:8500,close:"3/18/2026",type:"table",stage:"Buying Decision"},
-            {name:"Houston First Corporation - 2026 - Engage Partnership",amount:8500,close:"3/27/2026",type:"table",stage:"Buying Decision"}
-        ];
+const pipelineOpportunities = [
+  {name:"Oak View Group 2026 Engage Partnership",amount:790,close:"3/31/2026",type:"table",stage:"Buying Decision"},
+  {name:"Experience Columbus 2026 Engage Partnership",amount:1975,close:"3/31/2026",type:"table",stage:"Buying Decision"},
+  {name:"New York City Tourism + Conventions - 2026 Visionary Awards",amount:8500,close:"3/18/2026",type:"table",stage:"Buying Decision"},
+  {name:"Heritage - Visionary Awards 2026",amount:0,close:"4/3/2026",type:"table",stage:"Buying Decision"}
+];
 
-        const allOpportunities = [...sponsorshipOpportunities, ...tableOpportunities, ...pipelineOpportunities];
-
-        const registrations = [
+const registrations = [
   {name:"Arica Billing",company:"Visit Tampa Bay",type:"VIP Reserved Table",code:"RegTestComp26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Kelly Ricker",company:"Global Technology Industry Association",type:"Individual Ticket",code:"",price:395,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
@@ -764,20 +715,22 @@
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-19"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
   {name:"Carson Kopetz",company:"Projection",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-20"},
   {name:"Nathan Hermiston",company:"Visit KC",type:"Invited Guest",code:"",price:0,date:"2026-02-20"},
   {name:"Lesley Patterson",company:"Visit Oklahoma City",type:"Invited Guest",code:"",price:0,date:"2026-02-20"},
   {name:"Mandy Holt",company:"Visit Oklahoma City",type:"Invited Guest",code:"",price:0,date:"2026-02-20"},
@@ -788,7 +741,7 @@
   {name:"Kimberly Le",company:"Visit Omaha",type:"Invited Guest",code:"",price:0,date:"2026-02-22"},
   {name:"Charlynn Driscoll",company:"CHPA",type:"Invited Guest",code:"",price:0,date:"2026-02-23"},
   {name:"Jen Sullivan",company:"Nashville CVC",type:"Invited Guest",code:"",price:0,date:"2026-02-23"},
-  {name:"Mindy  Grubb",company:"eXp Realty",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-23"},
+  {name:"Mindy Grubb",company:"eXp Realty",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-23"},
   {name:"Joyce Leveston",company:"CEO - Javits center",type:"VIP Reserved Table",code:"",price:8500,date:"2026-02-23"},
   {name:"Kimberly Keating",company:"Viticus Group",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-23"},
   {name:"Kay Keating",company:"Viticus Group",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-23"},
@@ -804,22 +757,21 @@
   {name:"Lisa Hunter",company:"New Orleans & Company",type:"Invited Guest",code:"",price:0,date:"2026-02-23"},
   {name:"Elena Fis",company:"Kenes group",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
   {name:"David T Stevens",company:"Olympian Meeting",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
-  {name:"Rachelle  Soper MD",company:"Olympian Meeting",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
+  {name:"Rachelle Soper MD",company:"Olympian Meeting",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
   {name:"Kimberly Inniger",company:"\'+1 for Kimberly",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
   {name:"Beverly Smith",company:"\'+1 for Kimberly",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
   {name:"Kat Taylor",company:"Visit KC",type:"Invited Guest",code:"",price:0,date:"2026-02-24"},
-  {name:"Angie  Ranalli",company:"San Diego Tourism Authority",type:"VIP Reserved Table",code:"ANGIEVA26",price:0,date:"2026-02-24"},
+  {name:"Angie Ranalli",company:"San Diego Tourism Authority",type:"VIP Reserved Table",code:"ANGIEVA26",price:0,date:"2026-02-24"},
   {name:"Olga Stolpner",company:"Embassy",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-24"},
-  {name:"Eddie Canaday",company:"Nashville CVC",type:"Invited Guest",code:"",price:0,date:"2026-02-24"},
   {name:"Chad Chappell, CMP",company:"Visit Milwaukee",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-02-24"},
   {name:"Donna Marie Glover",company:"New Orleans & Company",type:"Invited Guest",code:"",price:0,date:"2026-02-24"},
   {name:"Rocco LaForgia",company:"Hilton Worldwide Sales",type:"Invited Guest",code:"",price:0,date:"2026-02-24"},
   {name:"Vanessa Claspill",company:"LVCVA",type:"Invited Guest",code:"",price:0,date:"2026-02-24"},
   {name:"Kellie Henderson",company:"SearchWide Global",type:"Individual Ticket",code:"",price:395,date:"2026-02-25"},
   {name:"Joy Cmiel",company:"ConferenceDirect",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-02-25"},
-  {name:"Kathryn Trigo",company:"Louisville Tourism",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-25"},
-  {name:"Kathryn Trigo",company:"Louisville Tourism",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-25"},
-  {name:"Kathryn Trigo",company:"Louisville Tourism",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-25"},
+  {name:"Kathryn Trigo",company:"San Diego Tourism Authority",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-25"},
+  {name:"Kathryn Trigo",company:"San Diego Tourism Authority",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-25"},
+  {name:"Kathryn Trigo",company:"San Diego Tourism Authority",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-02-25"},
   {name:"Carolyn Pund",company:"One More Event",type:"VIP Reserved Table",code:"CAROLYNVA26",price:0,date:"2026-02-25"},
   {name:"Charlene Lopez",company:"Atlanta Convention and Visitors Bureau",type:"Invited Guest",code:"",price:0,date:"2026-02-25"},
   {name:"Maddie DaMario",company:"Atlanta CVB",type:"Invited Guest",code:"",price:0,date:"2026-02-25"},
@@ -836,7 +788,7 @@
   {name:"Susan Euritt",company:"Ruckus Strategic Partnership Consulting",type:"Invited Guest",code:"",price:0,date:"2026-02-26"},
   {name:"Samantha Butler",company:"Maritz",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
   {name:"Jamie Murdock",company:"Maritz",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
-  {name:"Erin  Dunstan",company:"Maritz",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
+  {name:"Erin Dunstan",company:"Maritz",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
   {name:"Jennifer Emerson",company:"Hilton Corporate",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
   {name:"Michelle Minyard",company:"New Orleans Ernest N. Morial Convention Center",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
   {name:"Kim Napolitano",company:"Hilton",type:"Invited Guest",code:"",price:0,date:"2026-02-27"},
@@ -854,7 +806,7 @@
   {name:"Lesley Pincombe",company:"Rogers Centre Ottawa",type:"Individual Ticket",code:"",price:395,date:"2026-03-02"},
   {name:"Kelli Donahoe",company:"Music City Center",type:"VIP Reserved Table",code:"",price:8500,date:"2026-03-02"},
   {name:"David Lutz",company:"Velvet Chainsaw Consulting",type:"VIP Reserved Table",code:"DAVEVA26",price:0,date:"2026-03-02"},
-  {name:"Karen  Staples",company:"Visit Salt Lake",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-03-02"},
+  {name:"Karen Staples",company:"Visit Salt Lake",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-03-02"},
   {name:"Brenda Berrones",company:"Visit San Antonio",type:"Invited Guest",code:"",price:0,date:"2026-03-02"},
   {name:"Eddie Canaday",company:"Nashville CVC",type:"Invited Guest",code:"",price:0,date:"2026-03-03"},
   {name:"Colleen Cowan",company:"Nashville CVC",type:"Invited Guest",code:"",price:0,date:"2026-03-03"},
@@ -870,7 +822,6 @@
   {name:"Abbi Puanni",company:"ConferenceDirect",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-03-03"},
   {name:"Denise Bosmans",company:"Visit Tampa Bay | Visit Spokane",type:"Invited Guest",code:"",price:0,date:"2026-03-03"},
   {name:"Julie McWherter",company:"Hilton Worldwide Sales",type:"Invited Guest",code:"",price:0,date:"2026-03-03"},
-  {name:"Elliott Ferguson",company:"Destination DC",type:"Invited Guest",code:"",price:0,date:"2026-03-03"},
   {name:"Susan Giambalvo",company:"Visit Detroit",type:"Individual Ticket",code:"",price:395,date:"2026-03-04"},
   {name:"Margaret Miller",company:"Maritz Global Events",type:"Invited Guest",code:"",price:0,date:"2026-03-04"},
   {name:"Kaitlin Eskelson",company:"Visit Salt Lake",type:"Invited Guest",code:"",price:0,date:"2026-03-04"},
@@ -922,15 +873,15 @@
   {name:"John Puglisi",company:"Visit Seattle",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-11"},
   {name:"Tecumseh Deloney",company:"ZERO TO THREE",type:"Invited Guest",code:"",price:0,date:"2026-03-11"},
   {name:"Kellie Linder",company:"Visit Savannah",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-11"},
-  {name:"Sarah  Michel",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"HONOREE26",price:0,date:"2026-03-11"},
-  {name:"Michele  Frania",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"HONOREE26",price:0,date:"2026-03-11"},
+  {name:"Sarah Michel",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"HONOREE26",price:0,date:"2026-03-11"},
+  {name:"Michele Frania",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"HONOREE26",price:0,date:"2026-03-11"},
   {name:"David Beckett",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"HONOREE26",price:0,date:"2026-03-11"},
   {name:"Terri Beckett",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"HONOREE26",price:0,date:"2026-03-11"},
   {name:"Natasha Richards",company:"IMEX Group",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-12"},
   {name:"Alexandra Horton",company:"Hyatt Hotels Corporation",type:"Individual Ticket",code:"",price:395,date:"2026-03-12"},
   {name:"Carolina Garcia",company:"FASEB",type:"Invited Guest",code:"",price:0,date:"2026-03-12"},
   {name:"Dianna Waldroup",company:"Destination DC",type:"Invited Guest",code:"",price:0,date:"2026-03-12"},
-  {name:"Marc  Ghafoori",company:"Heritage",type:"Individual Ticket",code:"",price:395,date:"2026-03-13"},
+  {name:"Marc Ghafoori",company:"Heritage",type:"Individual Ticket",code:"",price:395,date:"2026-03-13"},
   {name:"Charles Starks",company:"Music City Center",type:"VIP Reserved Table",code:"CHARLESVA26",price:0,date:"2026-03-13"},
   {name:"Dina Starks",company:"Music City Center",type:"Invited Guest",code:"",price:0,date:"2026-03-13"},
   {name:"Adrienne Siemers",company:"Nashville CVC",type:"Invited Guest",code:"",price:0,date:"2026-03-15"},
@@ -940,14 +891,114 @@
   {name:"Bahara Saleh",company:"Federation of American Societies for Experimental Biology",type:"Invited Guest",code:"",price:0,date:"2026-03-16"},
   {name:"Maureen Nyamongo",company:"Washington Hilton",type:"Invited Guest",code:"",price:0,date:"2026-03-16"},
   {name:"Stephanie Murnan",company:"Visit Denver",type:"VIP Reserved Table",code:"",price:8500,date:"2026-03-16"},
-  {name:"Katherine Weselak",company:"Visit Cincy",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-03-16"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-03-16"},
   {name:"Brandi Sally",company:"Javits Center",type:"VIP Reserved Table",code:"",price:8500,date:"2026-03-16"},
   {name:"Theresa Kieu",company:"Orange County Convention Center",type:"Invited Guest",code:"",price:0,date:"2026-03-16"},
   {name:"Amra Elmore",company:"Visit Houston",type:"Invited Guest",code:"",price:0,date:"2026-03-17"},
   {name:"Odyssey Armitage",company:"Caesars",type:"Invited Guest",code:"",price:0,date:"2026-03-17"},
   {name:"Sina Bünte",company:"DigitalMind.events",type:"Individual Ticket",code:"FINALISTVA26",price:0,date:"2026-03-17"},
-  {name:"Alan Patterson",company:"encore",type:"Individual Ticket",code:"",price:395,date:"2026-03-17"}
+  {name:"Alan Patterson",company:"encore",type:"Individual Ticket",code:"",price:395,date:"2026-03-17"},
+  {name:"Clifford Rippetoe",company:"San Diego Convention Center",type:"Invited Guest",code:"",price:0,date:"2026-03-17"},
+  {name:"Leah Rippetoe",company:"San Diego Convention Center",type:"Invited Guest",code:"",price:0,date:"2026-03-17"},
+  {name:"Gary Murakami",company:"Teneo Hospitality Group",type:"Individual Ticket",code:"",price:395,date:"2026-03-17"},
+  {name:"John Rubsamen",company:"Out & Equal",type:"Invited Guest",code:"",price:0,date:"2026-03-17"},
+  {name:"Denise DeJulio",company:"Visit KC",type:"Invited Guest",code:"",price:0,date:"2026-03-18"},
+  {name:"Katherine Weselak",company:"Experience Columbus",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-03-18"},
+  {name:"Lisa Block",company:"Velvet Chainsaw Consulting",type:"Individual Ticket",code:"PASTHONOREE26",price:0,date:"2026-03-18"},
+  {name:"Kitty Ratcliffe",company:"St. Louis Convention & Visitors Commission",type:"Individual Ticket",code:"PASTHONOREE26",price:0,date:"2026-03-18"},
+  {name:"Susan Iris",company:"Navigate",type:"Individual Ticket",code:"PASTHONOREE26",price:0,date:"2026-03-18"},
+  {name:"Kristen Adomshick",company:"Hyatt Regency Chicago",type:"Individual Ticket",code:"",price:395,date:"2026-03-18"},
+  {name:"Elliott Ferguson",company:"Destination DC",type:"Individual Ticket",code:"PASTHONOREE26",price:0,date:"2026-03-18"},
+  {name:"Brian Stevens",company:"ConferenceDirect",type:"Individual Ticket",code:"PASTHONOREE26",price:0,date:"2026-03-18"},
+  {name:"Eduardo Chaillo",company:"Maritz",type:"Individual Ticket",code:"PASTHONOREE26",price:0,date:"2026-03-18"},
+  {name:"Kellie Linder",company:"Visit Savannah",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-18"},
+  {name:"Melissa Cherry",company:"Miles Partnership",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-18"},
+  {name:"Colleen Phalen",company:"Miles Partnership",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-18"},
+  {name:"Ariadni Pereira",company:"Olympian Meeting",type:"Individual Ticket",code:"",price:395,date:"2026-03-18"},
+  {name:"Diane Kovats",company:"ISCB",type:"Invited Guest",code:"",price:0,date:"2026-03-19"},
+  {name:"Krista LeZotte",company:"ASHA",type:"Invited Guest",code:"",price:0,date:"2026-03-19"},
+  {name:"Carol Wallace",company:"San Diego Theatres",type:"Individual Ticket",code:"",price:395,date:"2026-03-19"},
+  {name:"Joy Womack",company:"AAMC",type:"Invited Guest",code:"",price:0,date:"2026-03-19"},
+  {name:"John Loveless",company:"GES",type:"Invited Guest",code:"",price:0,date:"2026-03-19"},
+  {name:"Claire Smith",company:"Vancouver Convention Centre",type:"Invited Guest",code:"",price:0,date:"2026-03-19"},
+  {name:"Laurie Nelson-Choice, CGMP",company:"Visit Baltimore",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-20"},
+  {name:"Drew Squeglia",company:"Hyatt Hotels",type:"Individual Ticket",code:"",price:395,date:"2026-03-20"},
+  {name:"Shari Weinstein",company:"Zenia Event Consulting",type:"Invited Guest",code:"",price:0,date:"2026-03-20"},
+  {name:"Don Welsh",company:"Destinations International",type:"Individual Ticket",code:"EICVA26",price:0,date:"2026-03-20"},
+  {name:"Natasha Richards",company:"IMEX Group",type:"Individual Ticket",code:"EICVA26",price:0,date:"2026-03-20"},
+  {name:"Annette Gregg",company:"SITE/Society for Incentive Travel Excellence",type:"Individual Ticket",code:"EICVA26",price:0,date:"2026-03-20"},
+  {name:"Kireem Swinton",company:"Visit Baltimore",type:"Individual Ticket",code:"",price:395,date:"2026-03-20"},
+  {name:"Danielle Foisy",company:"TMS",type:"Individual Ticket",code:"",price:395,date:"2026-03-20"},
+  {name:"Dan Sherman",company:"TMS",type:"Individual Ticket",code:"",price:395,date:"2026-03-20"},
+  {name:"Meredith Douglas",company:"TMS",type:"Individual Ticket",code:"",price:395,date:"2026-03-20"},
+  {name:"Michelle Munroe",company:"American College of Nurse-Midwives",type:"Invited Guest",code:"",price:0,date:"2026-03-20"},
+  {name:"Mary Gallagher",company:"Los Angeles Tourism",type:"Invited Guest",code:"",price:0,date:"2026-03-22"},
+  {name:"Carmella Guambo",company:"Meet Long Beach",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Josh Gold",company:"National Apartment Association",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Debbie Glenn",company:"Meet Long Beach",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Jill Cook",company:"American School Counselor Association",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Kelly Frey",company:"American School Counselor Association",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Andrea McFadden",company:"Visit Long Beach",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Tara Meehan",company:"Marriott Marquis Chicago",type:"Individual Ticket",code:"",price:395,date:"2026-03-23"},
+  {name:"Monique Cabiness",company:"NAEYC",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Lauren Parr",company:"Optica",type:"Invited Guest",code:"",price:0,date:"2026-03-23"},
+  {name:"Yvette Clark",company:"American Alliance of Museums",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Alicia Stovall",company:"Connecticut Convention Center",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Danielle Pelargos",company:"Oklahoma City Convention Center",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Sydney Vranna",company:"American Chemical Society",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Peggy Williams-Smith",company:"Visit Milwaukee",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-24"},
+  {name:"Shana Gipson",company:"The Speaker Ready Room",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Rebecca DeLuca",company:"Las Vegas Convention and Visitors Authority",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Matt Murnane",company:"SLATE Event Management",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Kathryn Trigo",company:"San Diego Tourism Authority",type:"VIP Reserved Table",code:"PARTNERVA26",price:0,date:"2026-03-24"},
+  {name:"Brian Chung",company:"Visit Baltimore",type:"Individual Ticket",code:"PARTNERVA26",price:0,date:"2026-03-24"},
+  {name:"Robert McCreight",company:"Destination Canada",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Kevin Holland",company:"PHLCVB",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Maria Grasso",company:"PHLCVB",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Gregg Caren",company:"PHLCVB",type:"Invited Guest",code:"",price:0,date:"2026-03-24"},
+  {name:"Leah Lewis",company:"Motion + Power Manufacturers Alliance",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Jennifer Haire",company:"NA",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Hiwot Lemma",company:"Edison Electric Institute",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Jayne Carmona",company:"Marriott International",type:"Individual Ticket",code:"",price:395,date:"2026-03-25"},
+  {name:"DT Love",company:"Detraiter Love",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Sandra Bench",company:"Freeman",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Elizabeth Berry",company:"Louisville Tourism",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Katie Hathaway",company:"CM Event Solutions",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Melissa Hayden",company:"Visit Fort Worth",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Glenn Duncan",company:"Ottawa Tourism",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Bob O'Connell",company:"GES",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Jennylynne Shay",company:"Truck Renting and Leasing Association (TRALA)",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Josh Henry",company:"SPIE",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Emily Koubek",company:"AAMC",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Silvy Song",company:"Federation of American Societies for Experimental Biology",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Mike McGuire",company:"Freeman",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Doug Bennett",company:"Louisville Tourism",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Ashley Spencer",company:"National Education Association",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Ken Sien",company:"Freeman",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Susan Haning",company:"Freeman",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Paul Wong",company:"ISPOR",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Kate McCarthy",company:"k8 events, llc",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Desiree Bryant",company:"Renal Physicians Association",type:"Invited Guest",code:"",price:0,date:"2026-03-25"},
+  {name:"Doug Baarman",company:"ConferenceDirect",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Nancy DeBrosse",company:"Cadmium",type:"Individual Ticket",code:"",price:395,date:"2026-03-26"},
+  {name:"Rob Wade",company:"Freeman Chicago",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Paula Schneider",company:"American Psychiatric Association",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Nathan Tollett",company:"Visit Houston",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"John Solis",company:"Visit Houston",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Stephanie German",company:"American Clean Power Association",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Bonnie Greenspan",company:"Hyatt Hotels Corporation",type:"Individual Ticket",code:"",price:395,date:"2026-03-26"},
+  {name:"David Hambourger",company:"Chapman & Cutler",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Gracie Hambourger",company:"Hyatt Regency McCormick Place",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Marley Hambourger",company:"Seven Letter",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Natalie Hinman",company:"SOAR",type:"Invited Guest",code:"",price:0,date:"2026-03-26"},
+  {name:"Jamie Parreco",company:"SCAI",type:"Invited Guest",code:"",price:0,date:"2026-03-27"},
+  {name:"Ashanté Horton",company:"NCSS",type:"Invited Guest",code:"",price:0,date:"2026-03-27"},
+  {name:"Mosade Edwards",company:"National Art Education Association",type:"Invited Guest",code:"",price:0,date:"2026-03-27"},
+  {name:"FLORENCE Houlahan",company:"Fairmont",type:"Individual Ticket",code:"",price:395,date:"2026-03-27"},
+  {name:"Amy Beers",company:"AAMC",type:"Invited Guest",code:"",price:0,date:"2026-03-27"}
 ];
+
+        const allOpportunities = [...sponsorshipOpportunities, ...tableOpportunities, ...pipelineOpportunities];
 
         let sortDirection = {};
 
@@ -1131,7 +1182,7 @@
                 l.setAttribute('x1',x1); l.setAttribute('y1',y1); l.setAttribute('x2',x2); l.setAttribute('y2',y2);
                 l.setAttribute('stroke','#555'); l.setAttribute('stroke-width','2'); svg.appendChild(l);
             });
-            const todayX = xScale(45);
+            const todayX = xScale(38);
             const todayLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             todayLine.setAttribute('x1', todayX); todayLine.setAttribute('x2', todayX); todayLine.setAttribute('y1', pad.top); todayLine.setAttribute('y2', pad.top + h);
             todayLine.setAttribute('stroke', '#e74c3c'); todayLine.setAttribute('stroke-width', '1'); todayLine.setAttribute('stroke-dasharray', '4,4'); svg.appendChild(todayLine);
@@ -1173,7 +1224,6 @@
             const total = Object.values(data).reduce((a, b) => a + b, 0);
             const colorArray = colors || ['#d4a437', '#5dade2', '#4ecb71'];
             const entries = Object.entries(data);
-            // Single-slice: draw full donut ring instead of arc path
             if (entries.length === 1) {
                 const outerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 outerCircle.setAttribute('cx', cx); outerCircle.setAttribute('cy', cy); outerCircle.setAttribute('r', r);
@@ -1211,21 +1261,23 @@
             container.innerHTML = ''; container.appendChild(svg);
         }
 
-        function createHorizontalBarChart(container, data, color = '#d4a437') {
+        function createHorizontalBarChart(container, data, color) {
+            color = color || '#d4a437';
             const entries = Object.entries(data).sort((a, b) => b[1] - a[1]);
             const rowHeight = 44;
-            const padding = 190, barHeight = 28, gap = 16;
+            const padding = 190, barHeight = 28;
             const svgWidth = 800;
             const totalHeight = entries.length * rowHeight;
             const maxValue = Math.max(...Object.values(data));
-            // Create scrollable wrapper
+            container.style.height = 'auto';
+            container.style.minHeight = '0';
             const wrapper = document.createElement('div');
             wrapper.style.cssText = 'overflow-y: auto; max-height: 320px; padding-right: 4px;';
             const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg.setAttribute('viewBox', `0 0 ${svgWidth} ${totalHeight}`);
             svg.setAttribute('width', '100%');
             svg.setAttribute('height', totalHeight);
-            svg.style.cssText = `display: block;`;
+            svg.style.display = 'block';
             let y = 8;
             entries.forEach(([label, value]) => {
                 const barWidth = (value / maxValue) * (svgWidth - padding - 40);
@@ -1282,25 +1334,26 @@
                 {d:11,c:502},{d:10,c:542},{d:9,c:579},{d:8,c:622},{d:7,c:672},{d:6,c:700},{d:5,c:704},{d:4,c:715},
                 {d:3,c:789},{d:2,c:905},{d:1,c:950},{d:0,c:978}
             ];
-            // Updated 2026 pace through Mar 9 (59 days before May 7)
             const pace2026 = [
                 {d:77,c:28},{d:76,c:48},{d:74,c:50},{d:73,c:66},{d:72,c:79},{d:71,c:88},
                 {d:70,c:98},{d:69,c:107},{d:66,c:120},{d:65,c:135},{d:64,c:146},{d:63,c:151},{d:62,c:156},{d:59,c:157},
-                {d:58,c:163},{d:57,c:168},{d:56,c:175},{d:55,c:183},{d:54,c:190},{d:53,c:196},{d:52,c:201},{d:51,c:211},{d:50,c:218},{d:49,c:224},{d:48,c:229},{d:47,c:234},{d:46,c:240},{d:45,c:246}
+                {d:58,c:163},{d:57,c:168},{d:56,c:175},{d:55,c:183},{d:54,c:190},{d:53,c:196},{d:52,c:201},{d:51,c:211},
+                {d:50,c:218},{d:49,c:224},{d:48,c:229},{d:47,c:234},{d:46,c:240},{d:45,c:246},
+                {d:44,c:252},{d:43,c:259},{d:42,c:267},{d:41,c:276},{d:40,c:284},{d:39,c:296},{d:38,c:307}
             ];
             createYoYChart(document.getElementById('rsvpPaceChart'), pace2025, pace2026);
-            createDonutChart(document.getElementById('ticketTypeChart'), {'VIP Reserved Table':58,'Invited Guest':111,'Individual Ticket':77}, ['#d4a437','#5dade2','#4ecb71']);
+            createDonutChart(document.getElementById('ticketTypeChart'), {'VIP Reserved Table':59,'Invited Guest':164,'Individual Ticket':84}, ['#d4a437','#5dade2','#4ecb71']);
             createHorizontalBarChart(document.getElementById('topCompaniesChart'), {
-                'Projection':25,'Edmonton':20,'Maritz':7,'Nashville CVC':6,
-                'Visit Salt Lake':6,'Velvet Chainsaw':6,'Caesars Entertainment':6,'Atlanta CVB':5,
-                'New Orleans & Company':4,'Choose Chicago':4,'Visit KC':3,'Visit Omaha':3,
-                'Olympian Meeting':3,'Hilton Worldwide Sales':3,'ConferenceDirect':3
+                'Projection':25,'Experience Columbus':20,'Maritz':7,'San Diego Tourism':6,
+                'Visit Salt Lake':6,'Velvet Chainsaw':6,'Caesars Entertainment':6,'Nashville CVC':5,
+                'Atlanta CVB':5,'New Orleans and Company':4,'Choose Chicago':4,'ConferenceDirect':4,
+                'Freeman':4,'Visit KC':3,'Visit Omaha':3
             }, 'rgba(212,164,55,0.7)');
             createHorizontalBarChart(document.getElementById('guestOfChart'), {
-                'Nashville CVC':10,'Atlanta':9,'Maritz':7,'Caesars':6,
-                'Hilton':5,'Visit Omaha':5,'Visit Salt Lake':5,'California':5,
-                'Visit San Antonio':4,'Projection':4,'Visit KC':3,'New Orleans & Co/ENMCC':3,
-                'Hilton Worldwide Sales':3,'Kansas City':3,'Visit Oklahoma City':2
+                'Atlanta':11,'Nashville CVC':9,'Maritz':7,'Visit Salt Lake':7,
+                'Ottawa Tourism':6,'California':6,'Louisville':6,'Visit Long Beach':6,
+                'Freeman':6,'Visit Omaha':5,'Hilton':5,'Projection':5,
+                'Caesars':5,'Visit Houston':5,'Philadelphia':5
             }, 'rgba(93,173,226,0.6)');
         }
 
