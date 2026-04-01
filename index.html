@@ -172,8 +172,8 @@
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Open Pipeline (SF)</div>
-                    <div class="kpi-value blue"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$11,265</a></div>
-                    <div class="kpi-sublabel">4 opportunities</div>
+                    <div class="kpi-value blue"><a href="https://mypcma.lightning.force.com/lightning/r/Report/00ORg000008QXwbMAG/view" target="_blank" style="color:inherit;text-decoration:none;">$21,265</a></div>
+                    <div class="kpi-sublabel">5 opportunities (incl. $10K sponsorship pipeline)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Tables/Tickets Coverage</div>
@@ -198,7 +198,7 @@
                     <div class="stacked-bar">
                         <div class="stacked-segment green" style="flex:5950;">SF: $320,425</div>
                         <div class="stacked-segment purple" style="flex:1188;">Splash: $64,035</div>
-                        <div class="stacked-segment orange" style="flex:209;">Pipeline: $11,265</div>
+                        <div class="stacked-segment orange" style="flex:394;">Pipeline: $21,265</div>
                     </div>
                     <div class="progress-info">
                         <span>$384,460 confirmed of $425,000 goal (90.5%)</span>
@@ -491,7 +491,7 @@
                     <div class="change-detail">
                         <strong>Houston First Corporation — Closed Won</strong> $8,500 (3/23/2026, moved from pipeline)<br>
                         Sponsorship unchanged at $255,109. Choose Chicago modified 3/30 — no amount change.<br>
-                        <strong>Pipeline note:</strong> Oak View now $790 (was $1,580), Experience Columbus now $1,975 (was $1,580). <strong>New entry: Heritage - Visionary Awards 2026 at $0</strong> — Buying Decision, modified 3/27. Likely a placeholder needing an amount.
+                        <strong>Pipeline note:</strong> Oak View now $790 (was $1,580), Experience Columbus now $1,975 (was $1,580). <strong>Heritage - Visionary Awards 2026</strong> appears in both pipeline reports: $10,000 Sponsorship (Buying Decision) + $0 Tables (Buying Decision). Pipeline total updated to $21,265 across 5 opps.
                     </div>
                 </div>
                 <div class="change-item">
@@ -548,7 +548,7 @@
                                 <td>$0 (pipeline)</td>
                                 <td>—</td>
                                 <td><span class="flag-badge status">NEW</span></td>
-                                <td>New SF pipeline entry at $0, Buying Decision (modified 3/27). Not in JoAnn's tracker. Confirm if real deal and add amount.</td>
+                                <td>Heritage appears in BOTH pipeline reports: $10,000 Sponsorship pipeline + $0 Tables pipeline (same opp, different product lines). Total Heritage pipeline = $10,000. Confirm amount and close date with JoAnn.</td>
                             </tr>
                             <tr>
                                 <td><strong>Omni Hotels</strong></td>
@@ -682,8 +682,9 @@ const tableOpportunities = [
 ];
 
 const pipelineOpportunities = [
-  {name:"Oak View Group 2026 Engage Partnership",amount:790,close:"3/31/2026",type:"table",stage:"Buying Decision"},
-  {name:"Experience Columbus 2026 Engage Partnership",amount:1975,close:"3/31/2026",type:"table",stage:"Buying Decision"},
+  {name:"Heritage - Visionary Awards 2026",amount:10000,close:"4/3/2026",type:"sponsorship",stage:"Buying Decision"},
+  {name:"Oak View Group 2026 Engage Partnership",amount:790,close:"3/6/2026",type:"table",stage:"Buying Decision"},
+  {name:"Experience Columbus 2026 Engage Partnership",amount:1975,close:"3/13/2026",type:"table",stage:"Buying Decision"},
   {name:"New York City Tourism + Conventions - 2026 Visionary Awards",amount:8500,close:"3/18/2026",type:"table",stage:"Buying Decision"},
   {name:"Heritage - Visionary Awards 2026",amount:0,close:"4/3/2026",type:"table",stage:"Buying Decision"}
 ];
